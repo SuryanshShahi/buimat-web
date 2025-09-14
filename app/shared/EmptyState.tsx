@@ -7,7 +7,7 @@ import Heading from "./heading";
 import Img from "./Img";
 import Loader from "./Loader";
 import { IEmptyState } from "./tyoes";
-import Text from "./heading/text";
+import Text from "./heading/Text";
 
 interface IEmpty {
   data?: IEmptyState;

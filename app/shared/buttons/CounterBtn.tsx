@@ -1,4 +1,3 @@
-import { TICKET_STATUS } from "@/app/utils/enum";
 import clsx from "clsx";
 import { FiPlus } from "react-icons/fi";
 import { HiOutlineMinusSm } from "react-icons/hi";
@@ -54,7 +53,7 @@ const CounterBtn = ({
             onClick={remove}
           />
           <div className="min-w-5 text-center">{value}</div>
-          <FiPlus
+          {/* <FiPlus
             className={clsx(
               status === TICKET_STATUS.SEATS_FULL
                 ? "text-disabled cursor-not-allowed"
@@ -64,7 +63,7 @@ const CounterBtn = ({
             onClick={
               status === TICKET_STATUS.SEATS_FULL ? () => {} : () => add()
             }
-          />
+          /> */}
         </>
       )}
     </Button>

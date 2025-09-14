@@ -1,5 +1,4 @@
-import React from "react";
-import { IMenuItem } from "../Table/types";
+import React, { ReactNode } from "react";
 import clsx from "clsx";
 
 const PopOver = ({
@@ -7,7 +6,12 @@ const PopOver = ({
   className,
   close,
 }: {
-  menuItems: IMenuItem[];
+  menuItems: {
+    id: string;
+    icon: ReactNode;
+    text: ReactNode;
+    onClick: (id: string) => void;
+  }[];
   className?: string;
   close?: () => void;
 }) => {

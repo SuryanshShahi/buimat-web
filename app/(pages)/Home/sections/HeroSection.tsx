@@ -17,7 +17,7 @@ const HeroSection = () => {
             From Foundation to Finish.
           </Heading>
           <Text className="md:text-2xl" variant="tertiary">
-            Bridging India's Construction Needs.
+            Bridging India&apos;s Construction Needs.
           </Text>
         </div>
         <div className="flex md:flex-row flex-col itemscenter gap-6">
