@@ -1,0 +1,59 @@
+import Button from "@/app/shared/buttons/Button";
+import { IModal, Modal } from "@/app/shared/modal";
+import clsx from "clsx";
+import { FC, PropsWithChildren } from "react";
+
+interface IModalTemplate {
+  className?: string;
+  btnProps?: {
+    leftBtnName?: string;
+    rightBtnName?: string;
+    btnWrapperClass?: string;
+    isRightBtnLoading?: boolean;
+    isLeftBtnLoading?: boolean;
+    leftOnClick?: () => void;
+    rightOnClick?: () => void;
+    disabled?: boolean;
+  } | null;
+  modalProps: IModal;
+}
+
+export const ModalTemplate: FC<PropsWithChildren<IModalTemplate>> = ({
+  children,
+  className,
+  btnProps,
+  modalProps,
+}) => {
+  return (
+    <Modal {...modalProps}>
+      <div className={clsx("overflow-y-scroll", className)}>{children}</div>
+      {btnProps && (
+        <div
+          className={clsx(
+            "flex p-6 shadow-top w-full gap-x-3 mt-auto",
+            btnProps.btnWrapperClass
+          )}
+        >
+          {btnProps?.leftBtnName && (
+            <Button
+              btnName={btnProps?.leftBtnName}
+              variant="secondary"
+              fullWidth
+              onClick={btnProps?.leftOnClick || modalProps?.close}
+              isLoading={btnProps?.isLeftBtnLoading}
+            />
+          )}
+          {btnProps?.rightBtnName && (
+            <Button
+              btnName={btnProps?.rightBtnName}
+              fullWidth
+              onClick={btnProps?.rightOnClick}
+              disabled={btnProps?.disabled}
+              isLoading={btnProps?.isRightBtnLoading}
+            />
+          )}
+        </div>
+      )}
+    </Modal>
+  );
+};
