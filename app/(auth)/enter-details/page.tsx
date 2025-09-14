@@ -17,7 +17,7 @@ const page = () => {
   });
   const router = useRouter();
   return (
-    <div className="bg-gray-50 h-screen px-5 overflow-hidden sm:block flex flex-col sm:justify-center">
+    <div className="bg-gray-50 h-screen px-5 overflow-hidden sm:block flex flex-col sm:justify-center items-center">
       <div className="flex items-center gap-x-2 p-6" onClick={() => {}}>
         <Img
           alt="logo"
@@ -29,79 +29,83 @@ const page = () => {
         />
         <Heading className="text-2xl">BUIMAT</Heading>
       </div>
-      <CardWrapper className="space-y-10 !px-8 !pt-8 !pb-10 shadow-card !rounded-b-lg sm:backdrop-blur-0 backdrop-blur-sm sm:bg-white bg-white/80 max-w-[960px] mx-auto sm:mt-0 mt-10">
-        <Heading className="text-lg text-center">
-          Please share the below information to complete registration
-        </Heading>
-        <div className="grid md:grid-cols-2 gap-4">
-          <div className="flex flex-col gap-y-1">
-            <label className="text-secondary text-sm">Mobile No.</label>
-            <input
-              placeholder="Enter phone number"
-              value={details.phone}
-              onChange={(e) =>
-                setDetails({ ...details, phone: e.target.value })
-              }
-              className="h-11 rounded border border-gray-100 p-3"
-            />
-          </div>
-          <div className="flex flex-col gap-y-1">
-            <label className="text-secondary text-sm">Email ID</label>
-            <input
-              placeholder="Enter email"
-              value={details.email}
-              onChange={(e) =>
-                setDetails({ ...details, email: e.target.value })
-              }
-              className="h-11 rounded border border-gray-100 p-3"
-            />
-          </div>
-          <div className="flex flex-col gap-y-1">
-            <label className="text-secondary text-sm">Full Name</label>
-            <input
-              placeholder="Enter name"
-              value={details.name}
-              onChange={(e) => setDetails({ ...details, name: e.target.value })}
-              className="h-11 rounded border border-gray-100 p-3"
-            />
-          </div>
-          <div className="flex flex-col gap-y-1">
-            <label className="text-secondary text-sm">GSTIN</label>
-            <input
-              placeholder="Enter GSTIN"
-              value={details.gstIn}
-              onChange={(e) =>
-                setDetails({ ...details, gstIn: e.target.value })
-              }
-              className="h-11 rounded border border-gray-100 p-3"
-            />
-          </div>
-          <div className="space-y-1">
-            <label className="text-secondary text-sm">Type of business</label>
-            <div className="flex items-center gap-x-10">
-              {["Proprietor", "Partnership", "Company"].map((item) => (
-                <Text
-                  className="flex items-start gap-x-2 cursor-pointer"
-                  onClick={() => setDetails({ ...details, type: item })}
-                >
-                  <input
-                    type="radio"
-                    className="scale-125 mt-[6px]"
-                    checked={item === details.type}
-                  />
-                  {item}
-                </Text>
-              ))}
+      <div className="h-[calc(100vh-120px)] flex justify-center items-center">
+        <CardWrapper className="space-y-10 !px-8 !pt-8 !pb-10 shadow-card !rounded-b-lg sm:backdrop-blur-0 backdrop-blur-sm sm:bg-white bg-white/80 max-w-[960px] mx-auto">
+          <Heading className="text-lg text-center">
+            Please share the below information to complete registration
+          </Heading>
+          <div className="grid md:grid-cols-2 gap-4">
+            <div className="flex flex-col gap-y-1">
+              <label className="text-secondary text-sm">Mobile No.</label>
+              <input
+                placeholder="Enter phone number"
+                value={details.phone}
+                onChange={(e) =>
+                  setDetails({ ...details, phone: e.target.value })
+                }
+                className="h-11 rounded border border-gray-100 p-3"
+              />
+            </div>
+            <div className="flex flex-col gap-y-1">
+              <label className="text-secondary text-sm">Email ID</label>
+              <input
+                placeholder="Enter email"
+                value={details.email}
+                onChange={(e) =>
+                  setDetails({ ...details, email: e.target.value })
+                }
+                className="h-11 rounded border border-gray-100 p-3"
+              />
+            </div>
+            <div className="flex flex-col gap-y-1">
+              <label className="text-secondary text-sm">Full Name</label>
+              <input
+                placeholder="Enter name"
+                value={details.name}
+                onChange={(e) =>
+                  setDetails({ ...details, name: e.target.value })
+                }
+                className="h-11 rounded border border-gray-100 p-3"
+              />
+            </div>
+            <div className="flex flex-col gap-y-1">
+              <label className="text-secondary text-sm">GSTIN</label>
+              <input
+                placeholder="Enter GSTIN"
+                value={details.gstIn}
+                onChange={(e) =>
+                  setDetails({ ...details, gstIn: e.target.value })
+                }
+                className="h-11 rounded border border-gray-100 p-3"
+              />
+            </div>
+            <div className="space-y-1">
+              <label className="text-secondary text-sm">Type of business</label>
+              <div className="flex items-center gap-x-10">
+                {["Proprietor", "Partnership", "Company"].map((item) => (
+                  <Text
+                    className="flex items-start gap-x-2 cursor-pointer"
+                    onClick={() => setDetails({ ...details, type: item })}
+                  >
+                    <input
+                      type="radio"
+                      className="scale-125 mt-[6px]"
+                      checked={item === details.type}
+                    />
+                    {item}
+                  </Text>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
-        <Button
-          btnName="Continue"
-          className="sm:w-[40%] mx-auto !w-full"
-          disabled={Object.values(details).some((r) => r.length === 0)}
-          onClick={() => router.replace("/")}
-        />
-      </CardWrapper>
+          <Button
+            btnName="Continue"
+            className="sm:w-[40%] mx-auto !w-full"
+            disabled={Object.values(details).some((r) => r.length === 0)}
+            onClick={() => router.replace("/")}
+          />
+        </CardWrapper>
+      </div>
     </div>
   );
 };
