@@ -1,6 +1,6 @@
 import Button from "@/app/shared/buttons/Button";
 import CardWrapper from "@/app/shared/cards/CardWrapper";
-import Divider from "@/app/shared/Divider";
+import Divider from "@/app/shared/divider";
 import Heading from "@/app/shared/heading";
 import Text from "@/app/shared/heading/Text";
 import Img from "@/app/shared/Img";

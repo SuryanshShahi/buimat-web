@@ -1,5 +1,5 @@
 import Button from "@/app/shared/buttons/Button";
-import Divider from "@/app/shared/Divider";
+import Divider from "@/app/shared/divider";
 import Heading from "@/app/shared/heading";
 import Text from "@/app/shared/heading/Text";
 import TextWithLinks from "@/app/shared/heading/TextWithLinks";

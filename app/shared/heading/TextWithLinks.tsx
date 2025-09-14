@@ -1,5 +1,5 @@
 import React, { Fragment, ReactNode } from "react";
-import Text from "./Text";
+import Text, { TextProps } from "./Text";
 import Link from "next/link";
 import clsx from "clsx";
 
@@ -7,19 +7,22 @@ const TextWithLinks = ({
   links,
   text,
   className,
+  textProps,
 }: {
   links: {
     label?: string;
     link?: string;
     body?: ReactNode;
     target?: string;
+    className?: string;
   }[];
+  textProps?: TextProps;
   text: string;
   className?: string;
 }) => {
   return (
-    <div className={clsx("flex flex-wrap text-black w-max", className)}>
-      <Text type="medium" className="text-nowrap">
+    <div className={clsx("flex flex-wrap w-max", className)}>
+      <Text type="medium" className="text-nowrap" {...textProps}>
         {text}
       </Text>
       &nbsp;
@@ -31,7 +34,7 @@ const TextWithLinks = ({
             <Link
               target={item?.target}
               href={item?.link || "#"}
-              className="text-black font-bold"
+              className={clsx(`font-bold text-black`, item?.className)}
             >
               {item?.label}
             </Link>

@@ -1,6 +1,6 @@
 "use client";
 import CardWrapper from "@/app/shared/cards/CardWrapper";
-import Divider from "@/app/shared/Divider";
+import Divider from "@/app/shared/divider";
 import Heading from "@/app/shared/heading";
 import Img from "@/app/shared/Img";
 import ConfirmationModal from "@/app/shared/modal/ConfirmationModal";

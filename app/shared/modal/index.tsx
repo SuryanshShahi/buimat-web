@@ -3,7 +3,7 @@ import clsx from "clsx";
 import { FC, PropsWithChildren } from "react";
 export interface IModal {
   isOpen: boolean;
-  close: () => void;
+  close?: () => void;
   className?: string;
   size?: "sm" | "md" | "lg";
   wrapperClass?: string;
@@ -19,7 +19,11 @@ export const Modal: FC<PropsWithChildren<IModal>> = ({
   disableAnimation,
 }) => {
   return (
-    <Dialog open={isOpen} onClose={close} className="relative z-50">
+    <Dialog
+      open={isOpen}
+      onClose={close || (() => {})}
+      className="relative z-50"
+    >
       <DialogBackdrop
         transition
         className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in"

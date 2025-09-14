@@ -2,6 +2,7 @@ import Button from "@/app/shared/buttons/Button";
 import { IModal, Modal } from "@/app/shared/modal";
 import clsx from "clsx";
 import { FC, PropsWithChildren } from "react";
+import Heading, { HeadingProps } from "../heading";
 
 interface IModalTemplate {
   className?: string;
@@ -16,6 +17,7 @@ interface IModalTemplate {
     disabled?: boolean;
   } | null;
   modalProps: IModal;
+  headerProps?: HeadingProps;
 }
 
 export const ModalTemplate: FC<PropsWithChildren<IModalTemplate>> = ({
@@ -23,10 +25,14 @@ export const ModalTemplate: FC<PropsWithChildren<IModalTemplate>> = ({
   className,
   btnProps,
   modalProps,
+  headerProps,
 }) => {
   return (
     <Modal {...modalProps}>
-      <div className={clsx("overflow-y-scroll", className)}>{children}</div>
+      <div className={clsx("overflow-y-scroll p-5", className)}>
+        {headerProps && <Heading {...headerProps} />}
+        {children}
+      </div>
       {btnProps && (
         <div
           className={clsx(
