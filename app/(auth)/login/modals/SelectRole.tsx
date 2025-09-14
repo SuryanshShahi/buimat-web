@@ -31,7 +31,7 @@ const SelectRole = ({
         "Builder / Contractor / Company who need materials in bulk amount",
         "DIYer / Individual who need materials in small amount for personal use",
       ].map((item, idx) => (
-        <Fragment>
+        <Fragment key={idx}> 
           <Text
             className="flex items-start gap-x-2 cursor-pointer"
             onClick={() => setValue(item)}

@@ -106,7 +106,7 @@ const Login = () => {
               className="sm:text-[64px] text-[32px] sm:leading-[64px] leading-[48px] z-10 sm:text-start text-center"
               type="bold"
             >
-              Bridging India's Construction Needs.
+              Bridging India&apos;s Construction Needs.
             </Heading>
             {icons.map((item, idx) => (
               <Img

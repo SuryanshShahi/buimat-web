@@ -7,7 +7,7 @@ import Img from "@/app/shared/Img";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
-const page = () => {
+const EnterDetails = () => {
   const [details, setDetails] = useState({
     phone: "",
     email: "",
@@ -84,6 +84,7 @@ const page = () => {
               <div className="flex items-center gap-x-10">
                 {["Proprietor", "Partnership", "Company"].map((item) => (
                   <Text
+                    key={item}
                     className="flex items-start gap-x-2 cursor-pointer"
                     onClick={() => setDetails({ ...details, type: item })}
                   >
@@ -110,4 +111,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default EnterDetails;
