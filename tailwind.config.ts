@@ -11,6 +11,7 @@ const config: Config = {
   theme: {
     extend: {
       screens: {
+        xl: "1240px",
         "2xl": "1440px",
       },
       keyframes: {
@@ -26,22 +27,12 @@ const config: Config = {
           "0%": { opacity: "0", bottom: "-100px" },
           "100%": { opacity: "1", bottom: "0" },
         },
-        bottomBarSlideIn: {
-          "0%": { opacity: "0", bottom: "-100px" },
-          "100%": { opacity: "1", bottom: "40px" },
-        },
-        bottomBarSlideOut: {
-          "0%": { opacity: "1", bottom: "40px" },
-          "100%": { opacity: "0", bottom: "-100px" },
-        },
       },
 
       animation: {
         slide: "slide 0.3s ease-out",
         slideLeft: "slideLeft 0.3s ease-out",
         bottom: "bottom 0.5s",
-        bottomBarSlideIn: "bottomBarSlideIn 0.5s",
-        bottomBarSlideOut: "bottomBarSlideOut 0.5s",
       },
       colors: colors,
       fill: {
@@ -123,8 +114,8 @@ const config: Config = {
         "success-primary": colors.success["50"],
         "success-secondary": colors.success["100"],
         "success-solid": colors.success["600"],
-        "btn-primary": "var(--brand-600)",
-        "btn-primary-hover": "var(--brand-700)",
+        "btn-primary": "#22303E",
+        "btn-primary-hover": "#22303E",
         "btn-secondary": "#FFFFFF",
         "btn-secondary-hover": colors.gray["50"],
         "btn-secondary-color": "#FFFFFF",
@@ -169,11 +160,8 @@ const config: Config = {
         "2xl": "0px 24px 48px -12px #1018282E",
         "3xl": "0px 32px 64px -12px #10182824",
         top: "0px -4px 10px 0px rgba(102, 102, 102, 0.10)",
+        card: "-10px 30px 70px 0px rgba(30, 10, 82, 0.08)",
         bottom: "0px 4px 10px 0px rgba(102, 102, 102, 0.10)",
-        brand:
-          "0px 167px 47px 0px rgba(0, 0, 0, 0.00), 0px 107px 43px 0px rgba(0, 0, 0, 0.00), 0px 60px 36px 0px rgba(0, 0, 0, 0.01), 0px 27px 27px 0px rgba(0, 0, 0, 0.02), 0px 7px 15px 0px rgba(0, 0, 0, 0.02), 0px 0px 0px 0px rgba(0, 0, 0, 0.02)",
-        feedbackCard:
-          "0px 139px 39px 0px rgba(0, 0, 0, 0.00), 0px 89px 36px 0px rgba(0, 0, 0, 0.00), 0px 50px 30px 0px rgba(0, 0, 0, 0.01), 0px 22px 22px 0px rgba(0, 0, 0, 0.02), 0px 6px 12px 0px rgba(0, 0, 0, 0.02)",
       },
       fontFamily: {
         sora: ["var(--font-inter)"],

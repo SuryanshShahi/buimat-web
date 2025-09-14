@@ -1,29 +1,29 @@
-import clsx from "clsx";
+import classNames from "classnames";
 import { ReactNode } from "react";
 
 export interface HeadingProps {
   children: ReactNode;
   className?: string;
   as?: React.ElementType;
-  type?: "normal" | "medium" | "semibold" | "bold";
+  type?: "normal" | "medium" | "semibold" | "bold" | "extrabold";
   variant?: string;
 }
 
 const Heading = ({
   children,
   className,
-  as: Component = "h1",
+  as: Component = "p",
   type = "semibold",
   variant = "primary",
   ...props
 }: HeadingProps) => {
   return (
-    <Component
-      className={clsx(`font-${type}`, `text-${variant}`, className)}
+    <div
+      className={classNames(`font-${type}`, `text-${variant}`, className)}
       {...props}
     >
       {children}
-    </Component>
+    </div>
   );
 };
 

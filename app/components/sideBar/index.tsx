@@ -1,5 +1,4 @@
 "use client";
-import { GlobalContext } from "@/app/contexts";
 import CardWrapper from "@/app/shared/cards/CardWrapper";
 import Divider from "@/app/shared/Divider";
 import Heading from "@/app/shared/heading";
@@ -9,8 +8,7 @@ import { SvgCross } from "@/app/svgs";
 import useWindowDimensions from "@/app/utils/hooks/useWindowDimension";
 import clsx from "clsx";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
-import { useContext, useState } from "react";
+import { useState } from "react";
 
 const SideBar = ({
   className,
@@ -19,13 +17,8 @@ const SideBar = ({
   className?: string;
   close?: () => void;
 }) => {
-  const pathname = usePathname();
-  const router = useRouter();
-  const routes = pathname.split("/")?.splice(1);
   const [isOpen, setIsOpen] = useState("");
-
   const { width } = useWindowDimensions();
-  const { setData } = useContext(GlobalContext);
 
   return (
     <>

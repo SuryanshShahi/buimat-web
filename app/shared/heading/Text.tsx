@@ -1,5 +1,5 @@
-import clsx from "clsx";
 import { ComponentProps, ReactNode } from "react";
+import classNames from "classnames";
 
 export interface TextProps extends ComponentProps<"p"> {
   children?: ReactNode;
@@ -21,7 +21,7 @@ const Text = ({
 }: TextProps) => {
   return (
     <Component
-      className={clsx(
+      className={classNames(
         `text-${size}`,
         `font-${type}`,
         `text-${variant}`,
