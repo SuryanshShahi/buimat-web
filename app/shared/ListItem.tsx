@@ -7,12 +7,14 @@ const ListItem = ({
   isSelected,
   activeColor,
   withCheck,
+  styleText,
 }: {
   onClick?: () => void;
   name: string;
   isSelected?: boolean;
   withCheck?: boolean;
   activeColor?: string;
+  styleText?: string;
 }) => {
   return (
     <li className="group list-none cursor-pointer" onClick={onClick}>
@@ -28,7 +30,8 @@ const ListItem = ({
           <span
             className={clsx(
               "text-tertiary text-sm",
-              isSelected && `text-deep-violet font-medium ${activeColor}`
+              isSelected && `text-deep-violet font-medium ${activeColor}`,
+              styleText
             )}
           >
             {name}

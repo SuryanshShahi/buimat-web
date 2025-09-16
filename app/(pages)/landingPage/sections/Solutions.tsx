@@ -9,7 +9,7 @@ const Solutions = () => {
     b2b: {
       title: "Bulk Orders?",
       subtitle: "We’ve Got You Covered!",
-      image: "/images/hero2.png",
+      image: "/images/hero1.webp",
       soln: [
         {
           label: "Wholesale Pricing",
@@ -33,7 +33,7 @@ const Solutions = () => {
     b2c: {
       title: "Building Your Dream Home",
       subtitle: "Starts Here",
-      image: "/images/hero1.png",
+      image: "/images/hero1.webp",
       soln: [
         {
           label: "Wide Range of Products",
@@ -70,12 +70,12 @@ const Solutions = () => {
               height={535}
               width={505}
               alt="hero"
-              className="max-h-[535px] w-[505px] mx-auto object-contain"
+              className="max-h-[535px] w-[505px] mx-auto h-full object-cover rounded-2xl"
             />
             <div
               className={clsx(
                 "h-[100px] w-[100px] rounded-lg z-10 relative opacity-70 -mt-14 lg:block hidden",
-                idx === 0 ? "bg-brand-solid ml-2" : "bg-blue-500 ml-auto mr-2"
+                idx === 0 ? "bg-brand-solid -ml-3" : "bg-blue-500 ml-auto -mr-3"
               )}
             />
           </div>
@@ -85,10 +85,10 @@ const Solutions = () => {
               <Text variant="brand-tertiary" className="uppercase" size="sm">
                 {key} Solutions
               </Text>
-              <Heading className="sm:text-[32px] text-2xl" type="bold">
+              <Heading className="sm:text-[32px] text-2xl mt-4" type="bold">
                 {value?.title}
               </Heading>
-              <Heading className="sm:text-[32px] text-2xl" type="bold">
+              <Heading className="sm:text-[32px] text-2xl mt-1" type="bold">
                 {value?.subtitle}
               </Heading>
             </div>

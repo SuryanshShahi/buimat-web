@@ -118,7 +118,7 @@ const Button = ({
           {btnName}
         </div>
       )}
-      {icon && <div className="text-xl">{icon}</div>}
+      {icon}
       {secondaryIcon}
       {children}
     </button>

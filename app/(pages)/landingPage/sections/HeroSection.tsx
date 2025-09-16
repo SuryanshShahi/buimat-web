@@ -20,7 +20,7 @@ const HeroSection = () => {
             Bridging India&apos;s Construction Needs.
           </Text>
         </div>
-        <div className="flex md:flex-row flex-col itemscenter gap-6">
+        <div className="flex md:flex-row flex-col items-center gap-6">
           <Button btnName="Register to Explore Products" />
           <div className="group">
             <TextWithLinks
@@ -36,8 +36,8 @@ const HeroSection = () => {
       </div>
       <div className="flex sm:flex-row flex-col gap-4 justify-center items-center w-full">
         {[
-          { label: "GST-Compliant Customers", image: "/images/hero1.png" },
-          { label: "Non GST Customers", image: "/images/hero2.png" },
+          { label: "GST-Compliant Customers", image: "/images/hero1.webp" },
+          { label: "Non GST Customers", image: "/images/hero1.webp" },
         ].map((item) => (
           <div key={item.image} className="space-y-2">
             <Img
@@ -46,7 +46,7 @@ const HeroSection = () => {
               height={250}
               width={250}
               alt="hero"
-              className="h-[250px] w-[250px]"
+              className="h-[250px] w-[250px] rounded-2xl"
             />
             <Heading className="text-center">{item.label}</Heading>
           </div>

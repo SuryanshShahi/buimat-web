@@ -4,8 +4,9 @@ import CardWrapper from "@/app/shared/cards/CardWrapper";
 import Heading from "@/app/shared/heading";
 import Text from "@/app/shared/heading/Text";
 import Img from "@/app/shared/Img";
+import InputField from "@/app/shared/input/InputField";
 import { useRouter } from "next/navigation";
-import React, { useState } from "react";
+import { useState } from "react";
 
 const EnterDetails = () => {
   const [details, setDetails] = useState({
@@ -46,39 +47,38 @@ const EnterDetails = () => {
                 className="h-11 rounded border border-gray-100 p-3"
               />
             </div>
-            <div className="flex flex-col gap-y-1">
-              <label className="text-secondary text-sm">Email ID</label>
-              <input
-                placeholder="Enter email"
-                value={details.email}
-                onChange={(e) =>
-                  setDetails({ ...details, email: e.target.value })
-                }
-                className="h-11 rounded border border-gray-100 p-3"
-              />
-            </div>
-            <div className="flex flex-col gap-y-1">
-              <label className="text-secondary text-sm">Full Name</label>
-              <input
-                placeholder="Enter name"
-                value={details.name}
-                onChange={(e) =>
-                  setDetails({ ...details, name: e.target.value })
-                }
-                className="h-11 rounded border border-gray-100 p-3"
-              />
-            </div>
-            <div className="flex flex-col gap-y-1">
-              <label className="text-secondary text-sm">GSTIN</label>
-              <input
-                placeholder="Enter GSTIN"
-                value={details.gstIn}
-                onChange={(e) =>
-                  setDetails({ ...details, gstIn: e.target.value })
-                }
-                className="h-11 rounded border border-gray-100 p-3"
-              />
-            </div>
+
+            <InputField
+              label="Mobile No."
+              placeholder="Enter phone number"
+              value={details.phone}
+              onChange={(e) =>
+                setDetails({ ...details, phone: e.target.value })
+              }
+            />
+            <InputField
+              label="Email ID"
+              placeholder="Enter email"
+              value={details.email}
+              onChange={(e) =>
+                setDetails({ ...details, email: e.target.value })
+              }
+            />
+            <InputField
+              label="Full Name"
+              placeholder="Enter name"
+              value={details.name}
+              onChange={(e) => setDetails({ ...details, name: e.target.value })}
+            />
+            <InputField
+              label="GSTIN"
+              placeholder="Enter GSTIN"
+              value={details.gstIn}
+              onChange={(e) =>
+                setDetails({ ...details, gstIn: e.target.value })
+              }
+            />
+
             <div className="space-y-1">
               <label className="text-secondary text-sm">Type of business</label>
               <div className="flex items-center gap-x-10">

@@ -8,7 +8,7 @@ const PopOver = ({
 }: {
   menuItems: {
     id: string;
-    icon: ReactNode;
+    icon?: ReactNode;
     text: ReactNode;
     onClick: (id: string) => void;
   }[];
