@@ -101,9 +101,8 @@ const Page = () => {
         <div className="space-y-5">
           <div className="flex gap-x-12 overflow-x-scroll">
             {materials.map((item, idx) => (
-              <div className="space-y-2">
+              <div className="space-y-2" key={idx}>
                 <div
-                  key={idx}
                   className={clsx(
                     "flex flex-col justify-center items-center border bg-white rounded-full h-[70px] w-[70px] mx-auto"
                   )}
