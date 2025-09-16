@@ -2,15 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* the slides */
-.slick-slide {
-  margin: 0 12px;
-}
 
-/* the parent */
-.slick-list {
-  margin: 0 -12px;
-}
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;

@@ -92,7 +92,7 @@ const config: Config = {
         primary: "#FFFFFF",
         "primary-hover": colors.gray["50"],
         "primary-solid": colors.gray["950"],
-        secondary: colors.gray["25"],
+        secondary: "#22303E",
         "secondary-hover": colors.gray["50"],
         "secondary-solid": colors.gray["600"],
         tertiary: colors.gray["50"],
@@ -128,7 +128,7 @@ const config: Config = {
       },
       backgroundImage: {
         bannerOverlay:
-          "linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, #000 110%)",
+          "linear-gradient(180deg, rgba(0, 0, 0, 0.00) 45.41%, #000 80.65%)",
         grayBg: "linear-gradient(180deg, #F9FAFB 0%, #EDF0F3 100%)",
         dealsBg: "linear-gradient(100deg, #DA4606 0%, #DA4606 100%)",
         corporateOffersBg:

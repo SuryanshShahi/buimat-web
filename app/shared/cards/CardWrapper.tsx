@@ -14,7 +14,7 @@ const CardWrapper: FC<PropsWithChildren<ICardWrapper>> = ({
   return (
     <div
       className={clsx(
-        "rounded-2xl bg-white p-4 border border-tertiary",
+        "rounded-2xl bg-white p-4",
         onClick && "cursor-pointer",
         className
       )}

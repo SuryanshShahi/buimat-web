@@ -88,7 +88,7 @@ const Solutions = () => {
               <Heading className="sm:text-[32px] text-2xl" type="bold">
                 {value?.title}
               </Heading>
-              <Heading className="sm:text-[32px] text-2xl -mt-2" type="bold">
+              <Heading className="sm:text-[32px] text-2xl" type="bold">
                 {value?.subtitle}
               </Heading>
             </div>

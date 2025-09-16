@@ -5,6 +5,7 @@ import Heading from "@/app/shared/heading";
 import Text from "@/app/shared/heading/Text";
 import Img from "@/app/shared/Img";
 import useWindowDimensions from "@/app/utils/hooks/useWindowDimension";
+import { materials } from "@/app/utils/static";
 import clsx from "clsx";
 import { Fragment } from "react";
 import CountUp from "react-countup";
@@ -16,39 +17,7 @@ const QualityMaterials = () => {
     { label: "Categories", count: 35, suffix: "+" },
     { label: "States", count: 22, suffix: "+" },
   ];
-  const materials = [
-    {
-      label: "Bricks & Blocks",
-      image: "/images/materials/material1.png",
-    },
-    { label: "Cement", image: "/images/materials/material2.png" },
-    {
-      label: "Electrical Materials",
-      image: "/images/materials/material3.png",
-    },
-    {
-      label: "Natural Stones",
-      image: "/images/materials/material4.png",
-    },
-    {
-      label: "Paints & Finishes",
-      image: "/images/materials/material5.png",
-    },
-    { label: "Plumbing", image: "/images/materials/material6.png" },
-    {
-      label: "Sand & Aggregates",
-      image: "/images/materials/material7.png",
-    },
-    { label: "Tiles", image: "/images/materials/material8.png" },
-    {
-      label: "TMT Steel Bars",
-      image: "/images/materials/material9.png",
-    },
-    {
-      label: "Wooden Products",
-      image: "/images/materials/material10.png",
-    },
-  ];
+ 
   const { width } = useWindowDimensions();
   return (
     <div className="py-20 bg-[#f7f7f7] flex justify-center px-5">
