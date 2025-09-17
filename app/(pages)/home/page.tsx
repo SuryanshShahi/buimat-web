@@ -99,12 +99,12 @@ const Page = () => {
     <PageWrapper wrapperClass="bg-gray-100 pt-5 space-y-11">
       <div className="max-w-screen-2xl mx-auto space-y-11 px-5">
         <div className="space-y-5">
-          <div className="flex gap-x-12 overflow-x-scroll">
+          <div className="flex sm:gap-x-12 gap-x-5 overflow-x-scroll">
             {materials.map((item, idx) => (
               <div className="space-y-2" key={idx}>
                 <div
                   className={clsx(
-                    "flex flex-col justify-center items-center border bg-white rounded-full h-[70px] w-[70px] mx-auto"
+                    "flex flex-col justify-center items-center border bg-white rounded-full sm:h-[70px] sm:w-[70px] h-[50px] w-[50px] mx-auto"
                   )}
                 >
                   <Img
@@ -113,10 +113,10 @@ const Page = () => {
                     height={40}
                     width={40}
                     alt="hero"
-                    className="h-10 w-10"
+                    className="sm:h-10 sm:w-10 h-6 w-6"
                   />
                 </div>
-                <Heading className="text-center text-xs text-nowrap">
+                <Heading className="text-center sm:text-xs text-[10px] text-nowrap">
                   {item.label}
                 </Heading>
               </div>
