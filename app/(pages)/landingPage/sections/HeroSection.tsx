@@ -27,7 +27,7 @@ const HeroSection = () => {
             btnName="Register to Explore Products"
             size={Number(width) > 640 ? "md" : "xs"}
           />
-          <div className="group">
+          <div className="group w-max">
             <TextWithLinks
               links={[{ label: "Log In", link: "/login" }]}
               text="Already have an account?"
