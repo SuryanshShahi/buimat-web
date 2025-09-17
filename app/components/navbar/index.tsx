@@ -71,7 +71,7 @@ const Navbar = () => {
     <>
       <div className="bg-header-gradient h-screen absolute inset-0 -z-10" />
       <div className="sticky z-20 p-5 top-0 bg-white border-b" id="navbar">
-        <div className="flex items-center relative z-10 justify-between xl:container mx-auto sm:px-5 gap-x-4">
+        <div className="flex items-center relative z-10 justify-between sm:px-5 gap-x-4">
           <div
             className="flex items-center gap-x-2"
             onClick={() => router.push("/")}

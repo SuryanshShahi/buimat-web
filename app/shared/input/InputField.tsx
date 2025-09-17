@@ -22,7 +22,7 @@ const InputField = ({
         <input
           placeholder="Enter GSTIN"
           className={clsx(
-            "h-11 rounded border bg-gray-100 border-gray-100 p-3 outline-none",
+            "h-11 rounded-md border bg-gray-100 border-gray-100 p-3 outline-none",
             icon && "pr-10",
             className
           )}
