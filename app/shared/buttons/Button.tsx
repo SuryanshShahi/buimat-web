@@ -64,8 +64,8 @@ const Button = ({
       ? "text-disabled !cursor-not-allowed"
       : "text-btn-tertiary-color-fg hover:bg-btn-tertiary-color-hover",
     "tertiary-link": disabled
-      ? "text-disabled !cursor-not-allowed"
-      : "text-btn-tertiary-fg",
+      ? "text-disabled !cursor-not-allowed !p-0"
+      : "text-btn-tertiary-fg !p-0",
     "tertiary-color-link": disabled
       ? "text-disabled !cursor-not-allowed"
       : "text-btn-tertiary-color-fg",

@@ -7,6 +7,7 @@ import Img from "@/app/shared/Img";
 import useWindowDimensions from "@/app/utils/hooks/useWindowDimension";
 import { materials } from "@/app/utils/static";
 import clsx from "clsx";
+import { useRouter } from "next/navigation";
 import { Fragment } from "react";
 import CountUp from "react-countup";
 
@@ -17,8 +18,9 @@ const QualityMaterials = () => {
     { label: "Categories", count: 35, suffix: "+" },
     { label: "States", count: 22, suffix: "+" },
   ];
- 
+
   const { width } = useWindowDimensions();
+  const router = useRouter();
   return (
     <div className="py-20 bg-[#f7f7f7] flex justify-center px-5">
       <div className="max-w-screen-2xl mx-auto gap-y-6 flex flex-col items-center">
@@ -77,7 +79,11 @@ const QualityMaterials = () => {
             </div>
           ))}
         </div>
-        <Button btnName="Explore Products" className="mt-4" />
+        <Button
+          btnName="Explore Products"
+          className="mt-4"
+          onClick={() => router.push("/home")}
+        />
       </div>
     </div>
   );

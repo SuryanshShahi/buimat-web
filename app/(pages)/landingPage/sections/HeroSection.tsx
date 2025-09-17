@@ -38,15 +38,15 @@ const HeroSection = () => {
         {[
           { label: "GST-Compliant Customers", image: "/images/hero1.webp" },
           { label: "Non GST Customers", image: "/images/hero1.webp" },
-        ].map((item) => (
-          <div key={item.image} className="space-y-2">
+        ].map((item, idx) => (
+          <div key={idx} className="space-y-2">
             <Img
               src={item?.image}
               isLocal
               height={250}
               width={250}
               alt="hero"
-              className="h-[250px] w-[250px] rounded-2xl"
+              className="h-[250px] w-[250px] rounded-2xl object-cover"
             />
             <Heading className="text-center">{item.label}</Heading>
           </div>

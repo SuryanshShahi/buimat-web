@@ -71,7 +71,7 @@ const Navbar = () => {
     <>
       <div className="bg-header-gradient h-screen absolute inset-0 -z-10" />
       <div className="sticky z-20 p-5 top-0 bg-white border-b" id="navbar">
-        <div className="flex items-center relative z-10 justify-between xl:container sm:px-5">
+        <div className="flex items-center relative z-10 justify-between xl:container mx-auto sm:px-5 gap-x-4">
           <div
             className="flex items-center gap-x-2"
             onClick={() => router.push("/")}
@@ -87,7 +87,7 @@ const Navbar = () => {
             <Heading className="text-2xl">BUIMAT</Heading>
           </div>
 
-          <div className="group">
+          <div className="group lg:block hidden">
             <div className="flex items-center gap-x-2 cursor-pointer">
               <PiDotsNineBold size={30} className="text-brand-tertiary" />
               <Text size="sm">Categories</Text>
@@ -138,11 +138,12 @@ const Navbar = () => {
           </div>
 
           <InputField
+            wrapperClass="md:block hidden"
             placeholder="Search by category, brand or supplier"
-            className="w-[450px]"
+            className="lg:w-[450px]"
             icon={<FiSearch size={20} className="text-secondary" />}
           />
-          <div className="relative">
+          <div className="relative lg:block hidden">
             <Button
               icon={
                 <FaLocationDot
@@ -188,10 +189,10 @@ const Navbar = () => {
               />
             )}
           </div>
-          <div className="flex items-center text-2xl gap-x-10 [&>*]:cursor-pointer">
-            <IoIosHeart />
-            <PiShoppingCartFill />
-            <FaUser />
+          <div className="flex items-center text-2xl sm:gap-x-10 gap-x-4 [&>*]:cursor-pointer">
+            <IoIosHeart className="" size={20} />
+            <PiShoppingCartFill className="" size={20} />
+            <FaUser className="" size={18} />
           </div>
         </div>
       </div>

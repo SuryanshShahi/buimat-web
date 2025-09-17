@@ -91,7 +91,7 @@ const Page = () => {
     {
       title: "Tailored trading experience",
       description:
-        "Get curated benefits, such as exclusive discounts, enhanced protection, and extra support, tohelp grow your business every step of the way.",
+        "Get curated benefits, such as exclusive discounts, enhanced protection, and extra support, to help grow your business every step of the way.",
       icon: <LuShapes size={30} className="text-brand-tertiary" />,
     },
   ];
@@ -129,20 +129,21 @@ const Page = () => {
               .map((_, idx) => (
                 <div
                   key={idx}
-                  className="bg-[url('/images/banner.png')] rounded-2xl h-[300px] bg-cover relative bg-no-repeat"
+                  className="bg-[url('/images/hero1.webp')] rounded-2xl sm:h-[300px] h-[200px] bg-cover relative bg-no-repeat"
                 >
-                  <div className="bg-bannerOverlay h-full w-full absolute flex items-center">
-                    <div className="z-10 max-w-[390px] ml-[150px]">
+                  <div className="bg-bannerOverlay h-full w-full absolute flex md:items-center items-end rounded-2xl">
+                    <div className="z-10 md:max-w-[390px] max-w-[200px] md:ml-[150px] ml-5 md:mb-0 mb-5">
                       <Text
                         variant="white"
-                        className="!text-[40px] leading-10"
+                        className="md:!text-[40px] md:leading-10"
                         type="bold"
                       >
                         20% off on top brand TMT Steel Bars
                       </Text>
                       <Button
                         btnName="Shop Now"
-                        className="!w-[200px] !bg-brand-solid mt-4"
+                        size={Number(width) > 640 ? "md" : "xs"}
+                        className="md:!w-[200px] !bg-brand-solid mt-4"
                         styleBtnName="text-black"
                       />
                     </div>
@@ -158,18 +159,20 @@ const Page = () => {
               {item.tagName && (
                 <Chip
                   title={item.tagName}
-                  className="!bg-brand-solid !text-black !border-none !uppercase !px-[10px] !py-[6px] !font-bold"
                   size="xs"
+                  className="!bg-brand-solid !text-black !border-none !uppercase !px-[10px] !py-[6px] !font-bold sm:!text-sm !text-[10px]"
                 />
               )}
               <HeadingWithBtn
+                className="gap-x-4 sm:!items-center !items-start"
                 btnText="View All"
-                styleBtn="flex items-center !text-black"
+                styleBtn="flex items-center !text-black sm:!text-base !text-xs text-nowrap sm:mt-0 mt-1"
                 btnIcon={
-                  <IoIosArrowForward className="text-tertiary" size={16} />
+                  <IoIosArrowForward className="text-tertiary sm:text-base text-sm" />
                 }
                 headingProps={{
                   children: item?.title,
+                  className: "sm:!text-2xl !text-base",
                 }}
               />
             </div>
@@ -182,7 +185,7 @@ const Page = () => {
                     height={250}
                     width={250}
                     isLocal
-                    className="object-cover h-[250px] w-full rounded-t-lg"
+                    className="object-cover sm:h-[250px] h-[200px] w-full rounded-t-lg"
                   />
                   <div className="p-4">
                     <Text size="sm" className="line-clamp-2">
@@ -213,14 +216,18 @@ const Page = () => {
 
         <LimitedOffers />
       </div>
-      <div className="bg-secondary p-10 gap-5 grid lg:grid-cols-4 sm:grid-cols-2">
+      <div className="bg-secondary sm:p-10 px-5 py-8 gap-5 grid lg:grid-cols-4 sm:grid-cols-2">
         {data.map((item, idx) => (
           <CardWrapper className="!bg-[#324456] space-y-2" key={idx}>
             <div className="h-[50px] w-[50px] rounded-full flex justify-center items-center bg-[#435B72]">
               {item.icon}
             </div>
-            <Heading className="text-white text-2xl">{item.title}</Heading>
-            <Text className="text-white/70">{item.description}</Text>
+            <Heading className="text-white sm:text-2xl text-xl">
+              {item.title}
+            </Heading>
+            <Text className="text-white/70 sm:text-base text-sm">
+              {item.description}
+            </Text>
           </CardWrapper>
         ))}
       </div>
