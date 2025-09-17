@@ -18,7 +18,7 @@ const EnterDetails = () => {
   });
   const router = useRouter();
   return (
-    <div className="bg-gray-50 h-screen px-5 overflow-hidden sm:block flex flex-col sm:justify-center items-center">
+    <div className="bg-gray-50 h-screen px-5 sm:overflow-hidden sm:block flex flex-col sm:justify-center items-center">
       <div className="flex items-center gap-x-2 p-6" onClick={() => {}}>
         <Img
           alt="logo"
@@ -30,7 +30,7 @@ const EnterDetails = () => {
         />
         <Heading className="text-2xl">BUIMAT</Heading>
       </div>
-      <div className="h-[calc(100vh-120px)] flex justify-center items-center">
+      <div className="h-[calc(100vh-120px)] flex justify-center sm:items-center sm:mt-0 mt-7">
         <div>
           <CardWrapper className="space-y-10 sm:!px-8 !px-6 !pt-8 !pb-10 shadow-card !rounded-b-lg bg-white max-w-[960px] mx-auto">
             <Heading className="sm:text-lg text-center">

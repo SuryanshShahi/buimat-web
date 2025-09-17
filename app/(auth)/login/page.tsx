@@ -88,7 +88,7 @@ const Login = () => {
   }, [isOpen]);
   return (
     <>
-      <div className="bg-gray-50 h-screen px-5 overflow-hidden sm:block flex flex-col justify-center">
+      <div className="bg-gray-50 h-screen px-5 sm:overflow-hidden sm:block flex flex-col justify-center">
         <div className="flex items-center gap-x-2 p-6" onClick={() => {}}>
           <Img
             alt="logo"
