@@ -100,7 +100,7 @@ const Login = () => {
           />
           <Heading className="text-2xl">BUIMAT</Heading>
         </div>
-        <div className="relative max-w-screen-xl mx-auto h-[calc(100vh-80px)] flex flex-col justify-center">
+        <div className="relative max-w-screen-xl mx-auto h-[calc(100vh-80px)] flex flex-col sm:justify-center sm:mt-0 mt-16">
           <div className="max-w-[480px] relative pt-[10%] h-full sm:opacity-100 opacity-0">
             <Heading
               className="sm:text-[64px] text-[32px] sm:leading-[64px] leading-[48px] z-10 sm:text-start text-center"
@@ -121,7 +121,7 @@ const Login = () => {
             ))}
           </div>
           <div className="sm:max-w-[450px] absolute sm:right-0 w-full sm:mt-0 -mt-10">
-            <CardWrapper className="space-y-4 !px-8 !pt-8 !pb-10 shadow-card !rounded-b-lg sm:backdrop-blur-0 backdrop-blur-sm sm:bg-white bg-white/80">
+            <CardWrapper className="space-y-4 !px-8 !pt-8 !pb-10 shadow-card !rounded-b-lg bg-white">
               <Heading className="text-2xl text-center mb-10" type="bold">
                 Register
               </Heading>

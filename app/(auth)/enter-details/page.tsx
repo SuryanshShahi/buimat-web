@@ -32,22 +32,10 @@ const EnterDetails = () => {
       </div>
       <div className="h-[calc(100vh-120px)] flex justify-center items-center">
         <CardWrapper className="space-y-10 !px-8 !pt-8 !pb-10 shadow-card !rounded-b-lg sm:backdrop-blur-0 backdrop-blur-sm sm:bg-white bg-white/80 max-w-[960px] mx-auto">
-          <Heading className="text-lg text-center">
+          <Heading className="sm:text-lg text-center">
             Please share the below information to complete registration
           </Heading>
           <div className="grid md:grid-cols-2 gap-4">
-            <div className="flex flex-col gap-y-1">
-              <label className="text-secondary text-sm">Mobile No.</label>
-              <input
-                placeholder="Enter phone number"
-                value={details.phone}
-                onChange={(e) =>
-                  setDetails({ ...details, phone: e.target.value })
-                }
-                className="h-11 rounded border border-gray-100 p-3"
-              />
-            </div>
-
             <InputField
               label="Mobile No."
               placeholder="Enter phone number"
@@ -55,6 +43,7 @@ const EnterDetails = () => {
               onChange={(e) =>
                 setDetails({ ...details, phone: e.target.value })
               }
+              className="w-full"
             />
             <InputField
               label="Email ID"
@@ -63,12 +52,14 @@ const EnterDetails = () => {
               onChange={(e) =>
                 setDetails({ ...details, email: e.target.value })
               }
+              className="w-full"
             />
             <InputField
               label="Full Name"
               placeholder="Enter name"
               value={details.name}
               onChange={(e) => setDetails({ ...details, name: e.target.value })}
+              className="w-full"
             />
             <InputField
               label="GSTIN"
@@ -77,20 +68,21 @@ const EnterDetails = () => {
               onChange={(e) =>
                 setDetails({ ...details, gstIn: e.target.value })
               }
+              className="w-full"
             />
 
-            <div className="space-y-1">
+            <div className="sm:space-y-1 space-y-2">
               <label className="text-secondary text-sm">Type of business</label>
-              <div className="flex items-center gap-x-10">
+              <div className="flex sm:flex-row flex-col sm:items-center gap-x-10 gap-y-3">
                 {["Proprietor", "Partnership", "Company"].map((item) => (
                   <Text
                     key={item}
-                    className="flex items-start gap-x-2 cursor-pointer"
+                    className="flex items-start gap-x-2 cursor-pointer sm:text-base text-sm"
                     onClick={() => setDetails({ ...details, type: item })}
                   >
                     <input
                       type="radio"
-                      className="scale-125 mt-[6px]"
+                      className="scale-125 sm:mt-[6px] mt-1"
                       checked={item === details.type}
                     />
                     {item}
