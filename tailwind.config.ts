@@ -11,7 +11,7 @@ const config: Config = {
   theme: {
     extend: {
       screens: {
-        xxs: "380px",
+        xs: "380px",
         xl: "1240px",
         "2xl": "1440px",
       },
@@ -129,7 +129,7 @@ const config: Config = {
       },
       backgroundImage: {
         bannerOverlay:
-          "linear-gradient(180deg, rgba(0, 0, 0, 0.00) 45.41%, #000 80.65%)",
+          "linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, #000 110%)",
         grayBg: "linear-gradient(180deg, #F9FAFB 0%, #EDF0F3 100%)",
         dealsBg: "linear-gradient(100deg, #DA4606 0%, #DA4606 100%)",
         corporateOffersBg:

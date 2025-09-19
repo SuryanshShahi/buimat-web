@@ -39,7 +39,7 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-      <div className="flex xxs:flex-row flex-col xxs:gap-4 gap-y-6 justify-center items-center w-full">
+      <div className="flex xs:flex-row flex-col xs:gap-4 gap-y-6 justify-center items-center w-full">
         {[
           { label: "GST-Compliant Customers", image: "/images/hero1.webp" },
           { label: "Non GST Customers", image: "/images/hero1.webp" },
@@ -51,9 +51,9 @@ const HeroSection = () => {
               height={250}
               width={250}
               alt="hero"
-              className="sm:h-[250px] sm:w-[250px] xxs:h-[200px] xxs:w-[200px] rounded-2xl object-cover"
+              className="sm:h-[250px] sm:w-[250px] xs:h-[200px] xs:w-[200px] rounded-2xl object-cover"
             />
-            <Heading className="text-center text-nowrap sm:text-base xxs:text-xs">
+            <Heading className="text-center text-nowrap sm:text-base xs:text-xs">
               {item.label}
             </Heading>
           </div>

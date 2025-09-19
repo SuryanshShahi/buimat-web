@@ -206,3 +206,33 @@ export const products = {
     ],
   },
 };
+
+export const productFilters = [
+  {
+    title: "Select Category",
+    options: [
+      "All Tiles",
+      "Wall Tiles",
+      "Floor Tiles",
+      "Terrace",
+      "Exclusive",
+      "Wall Tiles",
+      "Parking / Outdoor",
+      "Swimming Pool",
+      "Beading & Borders",
+      "Wall Tiles",
+      "Flooring Solutions",
+      "Adhesives, Grouting & Accessories",
+      "Adhesives, Grouting & Accessories",
+    ],
+  },
+  {
+    title: "Suppliers",
+    options: [
+      "Only verified suppliers",
+      "Supplier with ⭐ 4.5 up",
+      "Supplier with ⭐ 4 up",
+      "Supplier with ⭐ 3 up",
+    ],
+  },
+];

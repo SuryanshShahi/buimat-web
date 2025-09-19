@@ -14,6 +14,7 @@ import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { LuShapes } from "react-icons/lu";
 import Slider from "react-slick";
 import LimitedOffers from "../landingPage/sections/LimitedOffers";
+import ProductCard from "@/app/shared/cards/ProductCard";
 
 const ArrowLeft = ({ onClick }: { onClick?: () => void }) => (
   <div
@@ -178,37 +179,7 @@ const Page = () => {
             </div>
             <div className="flex gap-x-3 gap-y-6 overflow-x-scroll">
               {item.items.map((e, idx) => (
-                <div className="bg-white rounded-lg min-w-[245px]" key={idx}>
-                  <Img
-                    src="/images/hero1.webp"
-                    alt=""
-                    height={250}
-                    width={250}
-                    isLocal
-                    className="object-cover sm:h-[250px] h-[200px] w-full rounded-t-lg"
-                  />
-                  <div className="p-4">
-                    <Text size="sm" className="line-clamp-2">
-                      {e.title}
-                    </Text>
-                    <div className="flex gap-x-2">
-                      <Heading className="text-sm">{e.discountPrice}</Heading>
-                      <Text
-                        size="sm"
-                        variant="tertiary"
-                        className="line-through"
-                      >
-                        {e.price}
-                      </Text>
-                      <span className="text-xs mt-[2px] text-tertiary">
-                        {e.unit}
-                      </span>
-                    </div>
-                    <Text size="sm" variant="tertiary">
-                      {e.bottomText}
-                    </Text>
-                  </div>
-                </div>
+                <ProductCard data={e} key={idx} />
               ))}
             </div>
           </div>
@@ -216,20 +187,22 @@ const Page = () => {
 
         <LimitedOffers />
       </div>
-      <div className="bg-secondary sm:p-10 px-5 py-8 gap-5 grid lg:grid-cols-4 sm:grid-cols-2">
-        {data.map((item, idx) => (
-          <CardWrapper className="!bg-[#324456] space-y-2" key={idx}>
-            <div className="h-[50px] w-[50px] rounded-full flex justify-center items-center bg-[#435B72]">
-              {item.icon}
-            </div>
-            <Heading className="text-white sm:text-2xl text-xl">
-              {item.title}
-            </Heading>
-            <Text className="text-white/70 sm:text-base text-sm">
-              {item.description}
-            </Text>
-          </CardWrapper>
-        ))}
+      <div className="bg-secondary sm:p-10 py-8">
+        <div className="gap-5 grid lg:grid-cols-4 sm:grid-cols-2 max-w-screen-2xl mx-auto px-5">
+          {data.map((item, idx) => (
+            <CardWrapper className="!bg-[#324456] space-y-2" key={idx}>
+              <div className="h-[50px] w-[50px] rounded-full flex justify-center items-center bg-[#435B72]">
+                {item.icon}
+              </div>
+              <Heading className="text-white sm:text-2xl text-xl">
+                {item.title}
+              </Heading>
+              <Text className="text-white/70 sm:text-base text-sm">
+                {item.description}
+              </Text>
+            </CardWrapper>
+          ))}
+        </div>
       </div>
     </PageWrapper>
   );

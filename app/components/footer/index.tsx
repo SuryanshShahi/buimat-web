@@ -50,7 +50,7 @@ const Footer = () => {
     },
   ];
   return (
-    <div className="bg-gray-100">
+    <div className="bg-gray-50 border-t border-t-gray-200">
       <div className="max-w-screen-2xl mx-auto md:grid grid-cols-7 flex flex-wrap py-16 px-5 gap-4">
         <div className="sm:max-w-[206px] max-w-[300px] col-span-2 space-y-4">
           <div

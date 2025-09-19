@@ -1,6 +1,7 @@
 "use client";
 import Footer from "@/app/components/footer";
 import Navbar from "@/app/components/navbar";
+import BreadCrumbs, { IBreadCrumbs } from "@/app/shared/BreadCrumbs";
 import clsx from "clsx";
 import { FC, PropsWithChildren, useEffect, useState } from "react";
 import { IoIosArrowUp } from "react-icons/io";
@@ -10,6 +11,7 @@ interface IPageWraps {
   wrapperClass?: string;
   hideHeader?: boolean;
   hideFooter?: boolean;
+  breadCrumbs?: IBreadCrumbs[];
 }
 
 const PageWrapper: FC<PropsWithChildren<IPageWraps>> = ({
@@ -17,6 +19,7 @@ const PageWrapper: FC<PropsWithChildren<IPageWraps>> = ({
   wrapperClass,
   hideHeader,
   hideFooter,
+  breadCrumbs,
 }) => {
   const [isActive, setIsActive] = useState(false);
 
@@ -38,6 +41,7 @@ const PageWrapper: FC<PropsWithChildren<IPageWraps>> = ({
   return (
     <main className="h-full">
       {!hideHeader && <Navbar />}
+      {breadCrumbs && <BreadCrumbs breadCrumbs={breadCrumbs} />}
       <ToastContainer stacked />
       <div className={clsx("animate-bottom", wrapperClass)}>{children}</div>
       {isActive && (
