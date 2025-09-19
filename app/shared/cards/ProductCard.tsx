@@ -9,6 +9,7 @@ import { SvgTruck } from "@/app/svgs";
 const ProductCard = ({
   data,
   className,
+  onClick,
 }: {
   data: {
     title: string;
@@ -20,6 +21,7 @@ const ProductCard = ({
     styleImage?: string;
   };
   className?: string;
+  onClick?: () => void;
 }) => {
   return (
     <div
@@ -27,6 +29,7 @@ const ProductCard = ({
         "bg-white rounded-lg min-w-[245px] shadow-lg shadow-neutral-100 border border-gray-100 group cursor-pointer overflow-hidden",
         className
       )}
+      onClick={onClick}
     >
       <div className="overflow-hidden rounded-t-lg relative">
         <Img

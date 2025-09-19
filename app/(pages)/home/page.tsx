@@ -15,6 +15,7 @@ import { LuShapes } from "react-icons/lu";
 import Slider from "react-slick";
 import LimitedOffers from "../landingPage/sections/LimitedOffers";
 import ProductCard from "@/app/shared/cards/ProductCard";
+import { useRouter } from "next/navigation";
 
 const ArrowLeft = ({ onClick }: { onClick?: () => void }) => (
   <div
@@ -96,13 +97,18 @@ const Page = () => {
       icon: <LuShapes size={30} className="text-brand-tertiary" />,
     },
   ];
+  const router = useRouter();
   return (
     <PageWrapper wrapperClass="bg-gray-100 pt-5 space-y-11">
       <div className="max-w-screen-2xl mx-auto space-y-11 px-5">
         <div className="space-y-5">
           <div className="flex sm:gap-x-12 gap-x-5 overflow-x-scroll">
             {materials.map((item, idx) => (
-              <div className="space-y-2" key={idx}>
+              <div
+                className="space-y-2"
+                key={idx}
+                onClick={() => router.push(`/products`)}
+              >
                 <div
                   className={clsx(
                     "flex flex-col justify-center items-center border bg-white rounded-full sm:h-[70px] sm:w-[70px] h-[50px] w-[50px] mx-auto"
@@ -146,6 +152,7 @@ const Page = () => {
                         size={Number(width) > 640 ? "md" : "xs"}
                         className="md:!w-[200px] !bg-brand-solid mt-4"
                         styleBtnName="text-black"
+                        onClick={() => router.push(`/products`)}
                       />
                     </div>
                   </div>
@@ -179,7 +186,11 @@ const Page = () => {
             </div>
             <div className="flex gap-x-3 gap-y-6 overflow-x-scroll">
               {item.items.map((e, idx) => (
-                <ProductCard data={e} key={idx} />
+                <ProductCard
+                  data={e}
+                  key={idx}
+                  onClick={() => router.push(`/products`)}
+                />
               ))}
             </div>
           </div>
