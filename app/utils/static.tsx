@@ -55,6 +55,7 @@ export const products = {
   recentItems: {
     tagName: "",
     title: "Recently Viewed by You",
+    path: "tiles",
     items: [
       {
         title:
@@ -106,6 +107,7 @@ export const products = {
   dealsOfTheDay: {
     tagName: "DEAL OF the day",
     title: "Up to 40% off on top brand bathroom sanitary ware products",
+    path: "tiles",
     items: [
       {
         title:
@@ -157,6 +159,7 @@ export const products = {
   topSelling: {
     tagName: "Top Selling",
     title: "Revamp your home with top selling tiles",
+    path: "tiles",
     items: [
       {
         title:

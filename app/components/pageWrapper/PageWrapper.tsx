@@ -2,6 +2,7 @@
 import Footer from "@/app/components/footer";
 import Navbar from "@/app/components/navbar";
 import BreadCrumbs, { IBreadCrumbs } from "@/app/shared/BreadCrumbs";
+import Divider from "@/app/shared/divider";
 import clsx from "clsx";
 import { FC, PropsWithChildren, useEffect, useState } from "react";
 import { IoIosArrowUp } from "react-icons/io";
@@ -39,11 +40,22 @@ const PageWrapper: FC<PropsWithChildren<IPageWraps>> = ({
     };
   }, []);
   return (
-    <main className="h-full">
+    <main className="h-full bg-gray-100">
       {!hideHeader && <Navbar />}
-      {breadCrumbs && <BreadCrumbs breadCrumbs={breadCrumbs} />}
+
       <ToastContainer stacked />
-      <div className={clsx("animate-bottom", wrapperClass)}>{children}</div>
+      <div className={clsx("animate-bottom", wrapperClass)}>
+        {breadCrumbs && (
+          <>
+            <BreadCrumbs
+              breadCrumbs={breadCrumbs}
+              className="max-w-screen-xl mx-auto px-5"
+            />
+            <Divider />
+          </>
+        )}
+        {children}
+      </div>
       {isActive && (
         <div
           className="z-10 w-12 h-8 hover:h-10 duration-300 bottom-0 right-10 rounded-t-md fixed cursor-pointer bg-[#22303E] flex items-center justify-center"

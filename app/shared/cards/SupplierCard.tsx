@@ -10,6 +10,7 @@ import CardWrapper from "./CardWrapper";
 const SupplierCard = ({
   data,
   className,
+  onClick
 }: {
   data: {
     title: string;
@@ -20,9 +21,13 @@ const SupplierCard = ({
     image: string;
   };
   className?: string;
+  onClick: () => void;
 }) => {
   return (
-    <CardWrapper className={clsx("flex gap-x-4 group", className)}>
+    <CardWrapper
+      className={clsx("flex gap-x-4 group", className)}
+      onClick={onClick}
+    >
       <div className="overflow-hidden rounded-lg relative min-w-[210px] max-w-[210px]">
         <Img
           src={data.image}

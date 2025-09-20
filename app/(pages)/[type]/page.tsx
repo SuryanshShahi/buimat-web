@@ -12,11 +12,13 @@ import Tags from "@/app/shared/Tags";
 import { SvgTruck } from "@/app/svgs";
 import { productFilters, products } from "@/app/utils/static";
 import { tw } from "@/tailwind.config";
+import { useRouter } from "next/navigation";
 import { FaStar } from "react-icons/fa6";
 import { IoFilterSharp } from "react-icons/io5";
 import { MdVerifiedUser } from "react-icons/md";
 
 const Page = () => {
+  const router = useRouter();
   const stats = [
     {
       label: "Verified Supplier",
@@ -62,7 +64,12 @@ const Page = () => {
               image: products.recentItems.items?.[0].image,
             })
             .map((item, idx) => (
-              <SupplierCard data={item} key={idx} className="w-full" />
+              <SupplierCard
+                data={item}
+                key={idx}
+                className="w-full"
+                onClick={() => router.push(`/suppliers?id=${item.title}`)}
+              />
             ))}
         </div>
       ),
@@ -105,7 +112,7 @@ const Page = () => {
         </div>
         <div className="px-5 w-full pb-5 overflow-y-scroll max-h-[calc(100vh-80px)]">
           <div className="flex gap-x-4 items-center">
-            <BreadCrumbs breadCrumbs={[{ label: "Products" }]} />
+            <BreadCrumbs />
             <div className="flex gap-x-2">
               {["Tiles", "Ceramic", "Marble"].map((item) => (
                 <Tags

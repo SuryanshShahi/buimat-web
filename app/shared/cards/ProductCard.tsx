@@ -47,7 +47,7 @@ const ProductCard = ({
           <Button
             btnName="Ready to ship"
             icon={<SvgTruck fill="white" />}
-            className="bg-[#22303E]/65 !py-1 !px-2 !text-xs !gap-x-[2px]"
+            className="!bg-[#22303E]/65 hover:!bg-[#22303E] !py-1 !px-2 !text-xs !gap-x-[2px]"
             iconFirst
           />
         </div>

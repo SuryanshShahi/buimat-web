@@ -2,7 +2,6 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { FC, PropsWithChildren, useMemo, useState } from "react";
 import { GlobalContext } from "../contexts";
-import ErrorBoundary from "./errorBoundary";
 export interface IRegisterDevice {
   mode: string;
   identifier: string;
@@ -37,13 +36,11 @@ const ReactQueryClientProvider: FC<PropsWithChildren> = ({ children }) => {
 
   const contextValue = useMemo(() => ({ data, setData }), [data, setData]);
   return (
-    <ErrorBoundary>
-      <QueryClientProvider client={queryClient}>
-        <GlobalContext.Provider value={contextValue}>
-          {children}
-        </GlobalContext.Provider>
-      </QueryClientProvider>
-    </ErrorBoundary>
+    <QueryClientProvider client={queryClient}>
+      <GlobalContext.Provider value={contextValue}>
+        {children}
+      </GlobalContext.Provider>
+    </QueryClientProvider>
   );
 };
 

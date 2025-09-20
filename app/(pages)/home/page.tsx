@@ -16,6 +16,7 @@ import Slider from "react-slick";
 import LimitedOffers from "../landingPage/sections/LimitedOffers";
 import ProductCard from "@/app/shared/cards/ProductCard";
 import { useRouter } from "next/navigation";
+import ProductTypes from "@/app/shared/ProductTypes";
 
 const ArrowLeft = ({ onClick }: { onClick?: () => void }) => (
   <div
@@ -102,34 +103,7 @@ const Page = () => {
     <PageWrapper wrapperClass="bg-gray-100 pt-5 space-y-11">
       <div className="max-w-screen-2xl mx-auto space-y-11 px-5">
         <div className="space-y-5">
-          <div className="flex sm:gap-x-12 gap-x-5 overflow-x-scroll">
-            {materials.map((item, idx) => (
-              <div
-                className="space-y-2"
-                key={idx}
-                onClick={() => router.push(`/products`)}
-              >
-                <div
-                  className={clsx(
-                    "flex flex-col justify-center items-center border bg-white rounded-full sm:h-[70px] sm:w-[70px] h-[50px] w-[50px] mx-auto"
-                  )}
-                >
-                  <Img
-                    src={item.image}
-                    isLocal
-                    height={40}
-                    width={40}
-                    alt="hero"
-                    className="sm:h-10 sm:w-10 h-6 w-6"
-                  />
-                </div>
-                <Heading className="text-center sm:text-xs text-[10px] text-nowrap">
-                  {item.label}
-                </Heading>
-              </div>
-            ))}
-          </div>
-
+          <ProductTypes data={materials} className="overflow-x-scroll" />
           <Slider {...settings} className="mb-20">
             {Array(2)
               .fill(null)
@@ -189,7 +163,7 @@ const Page = () => {
                 <ProductCard
                   data={e}
                   key={idx}
-                  onClick={() => router.push(`/products`)}
+                  onClick={() => router.push(`/${item.path}/products`)}
                 />
               ))}
             </div>
