@@ -2,21 +2,19 @@
 import PageWrapper from "@/app/components/pageWrapper/PageWrapper";
 import Button from "@/app/shared/buttons/Button";
 import CardWrapper from "@/app/shared/cards/CardWrapper";
+import ProductCard from "@/app/shared/cards/ProductCard";
 import Chip from "@/app/shared/Chip";
+import ProductTypes from "@/app/shared/components/ProductTypes";
 import Heading from "@/app/shared/heading";
 import HeadingWithBtn from "@/app/shared/heading/HeadingWithBtn";
 import Text from "@/app/shared/heading/Text";
-import Img from "@/app/shared/Img";
 import useWindowDimensions from "@/app/utils/hooks/useWindowDimension";
 import { materials, products } from "@/app/utils/static";
-import clsx from "clsx";
+import { useRouter } from "next/navigation";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { LuShapes } from "react-icons/lu";
 import Slider from "react-slick";
 import LimitedOffers from "../landingPage/sections/LimitedOffers";
-import ProductCard from "@/app/shared/cards/ProductCard";
-import { useRouter } from "next/navigation";
-import ProductTypes from "@/app/shared/ProductTypes";
 
 const ArrowLeft = ({ onClick }: { onClick?: () => void }) => (
   <div

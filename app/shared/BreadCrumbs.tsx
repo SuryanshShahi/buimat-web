@@ -48,7 +48,7 @@ const BreadCrumbs = ({
                 ? "text-gray-700"
                 : "!font-medium"
             )}
-            variant="tertiary"
+            variant="tertiary-link"
             onClick={
               item?.path ? () => router.push(item?.path ?? "") : () => {}
             }

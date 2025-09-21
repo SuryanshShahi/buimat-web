@@ -53,17 +53,15 @@ const CounterBtn = ({
             onClick={remove}
           />
           <div className="min-w-5 text-center">{value}</div>
-          {/* <FiPlus
+          <FiPlus
             className={clsx(
-              status === TICKET_STATUS.SEATS_FULL
+              status === "full"
                 ? "text-disabled cursor-not-allowed"
                 : "cursor-pointer text-brand-tertiary"
             )}
             size={18}
-            onClick={
-              status === TICKET_STATUS.SEATS_FULL ? () => {} : () => add()
-            }
-          /> */}
+            onClick={status === "full" ? () => {} : () => add()}
+          />
         </>
       )}
     </Button>

@@ -45,6 +45,7 @@ const Page = () => {
                 data={{ ...item, styleImage: "sm:!h-[200px]" }}
                 key={idx}
                 className="!min-w-[210px]"
+                onClick={() => router.push(`/product-details?id=${item.title}`)}
               />
             ))}
         </div>
@@ -68,7 +69,9 @@ const Page = () => {
                 data={item}
                 key={idx}
                 className="w-full"
-                onClick={() => router.push(`/suppliers?id=${item.title}`)}
+                onClick={() =>
+                  router.push(`/supplier-details?id=${item.title}`)
+                }
               />
             ))}
         </div>

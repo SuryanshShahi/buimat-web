@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { ReactNode } from "react";
+import { Fragment, ReactNode } from "react";
 import { LuBookmark } from "react-icons/lu";
 import Button from "../buttons/Button";
 import HeadingWithBtn from "../heading/HeadingWithBtn";
@@ -10,7 +10,7 @@ import CardWrapper from "./CardWrapper";
 const SupplierCard = ({
   data,
   className,
-  onClick
+  onClick,
 }: {
   data: {
     title: string;
@@ -57,7 +57,7 @@ const SupplierCard = ({
 
         <div className="flex items-center gap-x-4">
           {data.stats.map((item, idx) => (
-            <>
+            <Fragment key={idx}>
               <div className="flex gap-x-1 items-center">
                 {item.icon}
                 <Text size="sm">{item.label}</Text>
@@ -65,7 +65,7 @@ const SupplierCard = ({
               {idx !== data.stats.length - 1 && (
                 <div className="h-5 w-[1px] bg-black" />
               )}
-            </>
+            </Fragment>
           ))}
         </div>
         <Text size="sm">{data.certification}</Text>

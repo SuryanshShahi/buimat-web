@@ -3,21 +3,16 @@ import PageWrapper from "@/app/components/pageWrapper/PageWrapper";
 import Button from "@/app/shared/buttons/Button";
 import CardWrapper from "@/app/shared/cards/CardWrapper";
 import StatsCard from "@/app/shared/cards/StatsCard";
-import UserCard from "@/app/shared/cards/UserCard";
-import Chip from "@/app/shared/Chip";
+import Faqs from "@/app/shared/components/Faqs";
+import ProductTypes from "@/app/shared/components/ProductTypes";
+import RatingReviews from "@/app/shared/components/RatingReviews";
 import Divider from "@/app/shared/divider";
 import Heading from "@/app/shared/heading";
 import Text from "@/app/shared/heading/Text";
 import Img from "@/app/shared/Img";
-import ProductTypes from "@/app/shared/ProductTypes";
 import { materials } from "@/app/utils/static";
-import clsx from "clsx";
-import { Fragment } from "react";
-import CountUp from "react-countup";
-import { FaArrowLeft, FaArrowLeftLong, FaStar } from "react-icons/fa6";
-import { IoIosArrowDown } from "react-icons/io";
+import { FaArrowLeft } from "react-icons/fa6";
 import { MdVerifiedUser } from "react-icons/md";
-import { TbRefresh } from "react-icons/tb";
 
 const Page = () => {
   const stats = [
@@ -120,78 +115,11 @@ const Page = () => {
               className="grid md:grid-cols-4 grid-cols-2"
             />
           </CardWrapper>
-
           <CardWrapper className="space-y-6 shadow-card">
-            <Heading type="bold">Rating & Reviews</Heading>
-            <div className="flex items-center gap-x-2 text-2xl">
-              <FaStar className="text-brand-tertiary" />
-              <Heading type="bold">4.5 / 5 (97)</Heading>
-            </div>
-            <div className="flex sm:gap-4 gap-3 flex-wrap">
-              <Chip title="All" className="rounded-full !px-3" />
-              <Chip
-                title="With Photos & Videos"
-                className="rounded-full !px-3"
-              />
-              <Chip
-                title="Most Recent"
-                className="rounded-full !pl-3 !pr-2"
-                image={<IoIosArrowDown className="order-last" />}
-              />
-            </div>
-            {Array(3)
-              .fill(null)
-              .map((_, idx) => (
-                <div className="space-y-2" key={idx}>
-                  <UserCard title="Suryansh" subtitle="Nov 12" showInitials>
-                    <div className="flex items-center gap-x-1 ml-auto">
-                      <FaStar className="text-brand-tertiary" />
-                      <Heading type="bold">4</Heading>
-                    </div>
-                  </UserCard>
-                  <Text size="sm" variant="tertiary" className="ml-[53px]">
-                    Very professional tile supplier, my project went very
-                    smoothly, for different projects they also give me different
-                    programs and suggestions, thank you very much
-                  </Text>
-                </div>
-              ))}
-            <Button
-              btnName="Load More"
-              styleBtnName="text-sm"
-              variant="tertiary-color"
-              icon={<TbRefresh />}
-              className="ml-auto"
-              iconFirst
-            />
+            <RatingReviews />
           </CardWrapper>
-
           <CardWrapper className="space-y-6 shadow-card">
-            <Heading type="bold">Question & Answers</Heading>
-            {Array(3)
-              .fill({
-                label: "Are you a trade company or a manufacturer?",
-                value:
-                  "We are a more than ten year experience and owned CE,CCC,SGS,ISO approved Manufacturer.",
-              })
-              .map((item, idx) => (
-                <div key={idx} className="space-y-1">
-                  <Heading type="medium" className="text-sm">
-                    Q: {item.label}
-                  </Heading>
-                  <Text size="sm" variant="tertiary">
-                    <span className="font-medium">A:</span> {item.value}
-                  </Text>
-                </div>
-              ))}
-            <Button
-              btnName="Load More"
-              styleBtnName="text-sm"
-              variant="tertiary-color"
-              icon={<TbRefresh />}
-              className="ml-auto"
-              iconFirst
-            />
+            <Faqs />
           </CardWrapper>
         </div>
       </div>

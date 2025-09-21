@@ -20,7 +20,6 @@ const InputField = ({
       {label && <label className="text-secondary text-sm">{label}</label>}
       <div className="relative">
         <input
-          placeholder="Enter GSTIN"
           className={clsx(
             "h-11 rounded-md border bg-gray-100 border-gray-100 p-3 outline-none",
             icon && "pr-10",

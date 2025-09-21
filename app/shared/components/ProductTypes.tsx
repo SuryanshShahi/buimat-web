@@ -1,7 +1,7 @@
 import { clsx } from "clsx";
 import { useRouter } from "next/navigation";
-import Heading from "./heading";
-import Img from "./Img";
+import Heading from "../heading";
+import Img from "../Img";
 
 const ProductTypes = ({
   data,
@@ -12,9 +12,7 @@ const ProductTypes = ({
 }) => {
   const router = useRouter();
   return (
-    <div
-      className={clsx("flex sm:gap-12 gap-5", className)}
-    >
+    <div className={clsx("flex sm:gap-12 gap-5", className)}>
       {data.map((item, idx) => (
         <div
           className="space-y-2 min-w-[120px]"
