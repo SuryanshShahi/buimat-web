@@ -85,7 +85,7 @@ const Page = () => {
                 projects to life. With years of industry experience, we
                 specialize in offering a wide range of products, including
                 tiles, sanitary ware, cement, TMT steel bars, and more. Whether
-                you're building a dream home, commercial complex, or undertaking
+                you&apos;re building a dream home, commercial complex, or undertaking
                 large-scale infrastructure projects, we are your trusted partner
                 in delivering durable and reliable construction solutions.
               </Text>
