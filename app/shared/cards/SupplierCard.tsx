@@ -25,10 +25,10 @@ const SupplierCard = ({
 }) => {
   return (
     <CardWrapper
-      className={clsx("flex gap-x-4 group", className)}
+      className={clsx("flex md:flex-row flex-col gap-4 group", className)}
       onClick={onClick}
     >
-      <div className="overflow-hidden rounded-lg relative min-w-[210px] max-w-[210px]">
+      <div className="overflow-hidden rounded-lg relative min-w-[210px] md:max-w-[210px]">
         <Img
           src={data.image}
           alt={data.title}
@@ -46,7 +46,7 @@ const SupplierCard = ({
             className: "!text-base",
           }}
           btnVariant="button"
-          className="!items-start gap-x-4"
+          className="md:!items-start gap-x-4"
           btnProps={{
             icon: <LuBookmark size={20} />,
             variant: "tertiary-color",
@@ -58,7 +58,7 @@ const SupplierCard = ({
         <div className="flex items-center gap-x-4">
           {data.stats.map((item, idx) => (
             <Fragment key={idx}>
-              <div className="flex gap-x-1 items-center">
+              <div className="flex gap-x-1">
                 {item.icon}
                 <Text size="sm">{item.label}</Text>
               </div>
@@ -73,7 +73,7 @@ const SupplierCard = ({
         <Text size="sm" variant="tertiary">
           Min. Order - {data.minOrder}
         </Text>
-        <div className="flex gap-x-4">
+        <div className="flex flex-wrap sm:justify-start justify-center gap-4">
           <Button btnName="Send Enquiry" size="sm" />
           <Button
             btnName="Contact Supplier"

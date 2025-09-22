@@ -37,14 +37,14 @@ const Page = () => {
     {
       name: "Products",
       component: (
-        <div className="grid lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 xs:grid-cols-2 gap-4">
+        <div className="grid 2xl:grid-cols-5 xl:grid-cols-4 md:grid-cols-3 grid-cols-2 sm:gap-4 gap-2">
           {Array(40)
             .fill(products.recentItems.items?.[0])
             .map((item, idx) => (
               <ProductCard
                 data={{ ...item, styleImage: "sm:!h-[200px]" }}
                 key={idx}
-                className="!min-w-[210px]"
+                className="sm:!min-w-[210px] !min-w-full"
                 onClick={() => router.push(`/product-details?id=${item.title}`)}
               />
             ))}
@@ -87,7 +87,7 @@ const Page = () => {
     "Usage",
     "Material",
   ];
-  const filters = data.map((item) => ({
+  const filters = data.map((item, index) => ({
     title: item,
     body: (
       <div className="space-y-3">
@@ -96,12 +96,13 @@ const Page = () => {
         ))}
       </div>
     ),
+    isOpen: index < 2,
   }));
   return (
     <PageWrapper wrapperClass="bg-gray-100">
       <div className="flex">
         <div className="max-w-[285px] w-full bg-white border-r lg:block hidden">
-          <Heading type="bold" className="text-lg py-3 bg-blue-100 text-center">
+          <Heading type="bold" className="text-lg py-3 bg-blue-100 pl-4">
             Tiles
           </Heading>
           <Accordion data={filters} styleTitle="!text-base" />
@@ -113,7 +114,7 @@ const Page = () => {
             styleBtnName="text-black"
           />
         </div>
-        <div className="px-5 w-full pb-5 overflow-y-scroll max-h-[calc(100vh-80px)]">
+        <div className="sm:px-5 px-4 w-full pb-5 overflow-y-scroll max-h-[calc(100vh-80px)] lg:space-y-0 lg:pt-0 space-y-4 pt-4">
           <div className="flex gap-x-4 items-center">
             <BreadCrumbs />
             <div className="flex gap-x-2">
