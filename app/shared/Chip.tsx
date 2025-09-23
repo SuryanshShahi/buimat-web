@@ -25,7 +25,8 @@ export interface IChip {
     | "blue"
     | "purple"
     | "pink"
-    | "orange";
+    | "orange"
+    | "white";
   type?: "tag" | "image" | "primary";
   size?: "xs" | "sm" | "md" | "lg";
   outlined?: boolean;

@@ -1,3 +1,4 @@
+"use client";
 import Button from "@/app/shared/buttons/Button";
 import CounterBtn from "@/app/shared/buttons/CounterBtn";
 import CardWrapper from "@/app/shared/cards/CardWrapper";
@@ -7,17 +8,18 @@ import Text from "@/app/shared/heading/Text";
 import Img from "@/app/shared/Img";
 import SelectionControl from "@/app/shared/input/SelectionControl";
 import useWindowDimensions from "@/app/utils/hooks/useWindowDimension";
+import { Fragment } from "react";
 import { FaRegTrashAlt } from "react-icons/fa";
 import { FaArrowLeft } from "react-icons/fa6";
 import { RiHeartAdd2Line } from "react-icons/ri";
 
-const CartItems = () => {
+const page = () => {
   const { width } = useWindowDimensions();
   return (
     <div className="max-w-screen-2xl mx-auto space-y-4">
       <div className="flex justify-between items-center">
         <Heading className="sm:text-lg flex gap-x-3 items-center" type="bold">
-          <FaArrowLeft className="text-lg" />
+          <FaArrowLeft className="text-lg sm:block hidden" />
           Cart
         </Heading>
         <SelectionControl
@@ -53,9 +55,9 @@ const CartItems = () => {
               <div className="sm:space-y-4 space-y-6">
                 {Array(2)
                   .fill(null)
-                  .map((item, idx) => (
-                    <>
-                      <div className="space-y-4 sm:!-mb-2" key={idx}>
+                  .map((_, idx) => (
+                    <Fragment key={idx}>
+                      <div className="space-y-4 sm:!-mb-2">
                         <SelectionControl
                           type="checkbox"
                           wrapperClass="!gap-x-3"
@@ -130,7 +132,7 @@ const CartItems = () => {
                         </div>
                       </div>
                       {idx !== 1 && <Divider />}
-                    </>
+                    </Fragment>
                   ))}
               </div>
             </CardWrapper>
@@ -140,4 +142,4 @@ const CartItems = () => {
   );
 };
 
-export default CartItems;
+export default page;
