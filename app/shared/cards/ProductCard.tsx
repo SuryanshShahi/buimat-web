@@ -1,10 +1,10 @@
-import React from "react";
-import Heading from "../heading";
-import Img from "../Img";
-import Text from "../heading/Text";
-import clsx from "clsx";
-import Button from "../buttons/Button";
 import { SvgTruck } from "@/app/svgs";
+import clsx from "clsx";
+import { useRouter } from "next/navigation";
+import Button from "../buttons/Button";
+import Heading from "../heading";
+import Text from "../heading/Text";
+import Img from "../Img";
 
 const ProductCard = ({
   data,
@@ -23,6 +23,7 @@ const ProductCard = ({
   className?: string;
   onClick?: () => void;
 }) => {
+  const router = useRouter();
   return (
     <div
       className={clsx(
@@ -76,6 +77,7 @@ const ProductCard = ({
             size="sm"
             className="!bg-brand-solid"
             fullWidth
+            onClick={() => router.push("/cart")}
           />
           <Button
             btnName="Add to Compare"

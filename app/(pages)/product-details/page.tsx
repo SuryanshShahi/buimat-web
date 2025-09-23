@@ -143,7 +143,14 @@ const Page = () => {
       </PageWrapper>
       <SideDrawer
         header={<Heading>Select Variation & Quantity</Heading>}
-        footer={<Button btnName="Add to Cart" size="sm" fullWidth />}
+        footer={
+          <Button
+            btnName="Add to Cart"
+            size="sm"
+            fullWidth
+            onClick={() => router.push("/cart")}
+          />
+        }
         isOpen={isOpen}
         close={() => setIsOpen(false)}
       >
