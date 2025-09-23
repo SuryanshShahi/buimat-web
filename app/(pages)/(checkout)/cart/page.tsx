@@ -13,7 +13,7 @@ import { FaRegTrashAlt } from "react-icons/fa";
 import { FaArrowLeft } from "react-icons/fa6";
 import { RiHeartAdd2Line } from "react-icons/ri";
 
-const page = () => {
+const Page = () => {
   const { width } = useWindowDimensions();
   return (
     <div className="max-w-screen-2xl mx-auto space-y-4">
@@ -142,4 +142,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

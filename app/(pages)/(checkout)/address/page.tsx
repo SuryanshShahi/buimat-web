@@ -9,7 +9,7 @@ import { FaArrowLeft } from "react-icons/fa6";
 import useHook from "./useHook";
 import Button from "@/app/shared/buttons/Button";
 
-const page = () => {
+const Page = () => {
   const { values, handleChange, setFieldValue } = useHook();
   const inputs = [
     {
@@ -118,4 +118,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
