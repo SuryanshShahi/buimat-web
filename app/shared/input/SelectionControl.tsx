@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { InputHTMLAttributes } from "react";
+import { FC, InputHTMLAttributes, PropsWithChildren } from "react";
 interface ISelectionControl extends InputHTMLAttributes<HTMLInputElement> {
   label?: string;
   className?: string;
@@ -8,15 +8,16 @@ interface ISelectionControl extends InputHTMLAttributes<HTMLInputElement> {
   errorMessage?: string;
   type: "radio" | "checkbox";
 }
-const SelectionControl = ({
+const SelectionControl: FC<PropsWithChildren<ISelectionControl>> = ({
   label,
   styleLabel,
   className,
   wrapperClass,
   errorMessage,
   type,
+  children,
   ...rest
-}: ISelectionControl) => {
+}) => {
   return (
     <>
       <div className={clsx("flex gap-x-2 cursor-pointer", wrapperClass)}>
@@ -25,6 +26,7 @@ const SelectionControl = ({
           type={type}
           {...rest}
         />
+        {children}
         {label && (
           <label
             className={clsx(

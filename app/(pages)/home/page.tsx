@@ -161,7 +161,9 @@ const Page = () => {
                 <ProductCard
                   data={e}
                   key={idx}
-                  onClick={() => router.push(`/${item.path}`)}
+                  onClick={() =>
+                    router.push(`/product-details?id=${item.title}`)
+                  }
                 />
               ))}
             </div>
