@@ -3,10 +3,11 @@ import CardWrapper from "@/app/shared/cards/CardWrapper";
 import Divider from "@/app/shared/divider";
 import Heading from "@/app/shared/heading";
 import KeyValue from "@/app/shared/KeyValue";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 const OrderSummary = () => {
   const pathname = usePathname();
+  const router = useRouter();
   return (
     <CardWrapper className="gap-y-4 !p-6 shadow-card h-[350px] flex flex-col">
       <Heading>Order Summary (80 Items)</Heading>
@@ -47,6 +48,9 @@ const OrderSummary = () => {
         className="mt-auto"
         size="sm"
         fullWidth
+        onClick={() =>
+          router.push(pathname.includes("cart") ? "/address" : "/payment")
+        }
       />
     </CardWrapper>
   );
