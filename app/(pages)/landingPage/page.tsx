@@ -60,7 +60,7 @@ const Home = () => {
         <div className="relative overflow-hidden partnerList">
           <Slider {...settings}>
             {logos.map((item, idx) => (
-              <div className="bg-gray-100 rounded-lg py-6 px-4" key={idx}>
+              <div className="bg-gray-50 rounded-lg py-6 px-4" key={idx}>
                 <Img
                   key={`first-${idx}`}
                   alt="logo"
