@@ -32,7 +32,7 @@ const EnterDetails = () => {
       </div>
       <div className="h-[calc(100vh-120px)] flex justify-center sm:items-center sm:mt-0 mt-7">
         <div>
-          <CardWrapper className="space-y-10 sm:!px-8 !px-6 !pt-8 !pb-10 shadow-card !rounded-b-lg bg-white max-w-[960px] mx-auto">
+          <CardWrapper className="space-y-10 sm:!px-8 !px-6 !pt-8 !pb-10. shadow-card !rounded-b-lg bg-white max-w-[960px] mx-auto">
             <Heading className="sm:text-lg text-center">
               Please share the below information to complete registration
             </Heading>

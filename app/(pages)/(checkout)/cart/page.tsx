@@ -16,7 +16,7 @@ import { RiHeartAdd2Line } from "react-icons/ri";
 const Page = () => {
   const { width } = useWindowDimensions();
   return (
-    <div className="max-w-screen-2xl mx-auto space-y-4">
+    <div className="space-y-4">
       <div className="flex justify-between items-center">
         <Heading className="sm:text-lg flex gap-x-3 items-center" type="bold">
           <FaArrowLeft className="text-lg sm:block hidden" />

@@ -31,9 +31,9 @@ const TabBar: FC<PropsWithChildren<ITabBar>> = ({
   const activeTab = params.size
     ? Object.fromEntries(params.entries())?.tab
     : tabs[0]?.name?.toLowerCase();
-  const renderComponent = tabs?.find(
-    (e) => e?.name?.toLowerCase() === activeTab
-  )?.component;
+  const renderComponent =
+    tabs?.find((e) => e?.name?.toLowerCase() === activeTab)?.component ??
+    tabs[0]?.component;
   return (
     <div className={clsx(`space-y-6`, className)}>
       <div className="relative">

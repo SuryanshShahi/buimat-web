@@ -54,8 +54,8 @@ const Page = () => {
     },
   ];
   return (
-    <div className="max-w-screen-2xl mx-auto gap-y-4 w-full flex flex-col lg:items-start items-center">
-      <div className="lg:-ml-7 mr-auto">
+    <div className="space-y-4">
+      <div className="">
         <Heading className="sm:text-lg flex gap-x-3 items-center" type="bold">
           <FaArrowLeft className="text-lg sm:block hidden" />
           Address
@@ -65,7 +65,7 @@ const Page = () => {
           delivery purposes.
         </Text>
       </div>
-      <CardWrapper className="max-w-[712px] space-y-4 w-full lg:mx-0 mx-auto">
+      <CardWrapper className="space-y-4">
         <div className="grid md:grid-cols-2 gap-4">
           {inputs.map((item, idx) => (
             <InputField

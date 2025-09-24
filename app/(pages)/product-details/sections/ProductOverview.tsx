@@ -230,8 +230,8 @@ const ProductOverview = () => {
                   { label: "Luster", value: "GLOSSY" },
                   { label: "Size", value: "600 X 600mm" },
                   { label: "Water Absorption", value: "<0.5%" },
-                ].map((item) => (
-                  <tr key={item.label}>
+                ].map((item, idx) => (
+                  <tr key={idx}>
                     <td className="py-2 px-4 border border-secondary text-sm">
                       {item.label}
                     </td>
