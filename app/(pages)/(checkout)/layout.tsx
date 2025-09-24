@@ -43,20 +43,10 @@ export default function RootLayout({
       <Divider />
       <div className="sm:px-5 px-4 mt-6 space-y-6">
         <div className="flex lg:flex-row flex-col gap-10 lg:items-start justify-between items-center">
-         <div className="max-w-[700px] w-full">
-         <div className="flex justify-between items-center">
-        <Heading className="sm:text-lg flex gap-x-3 items-center" type="bold">
-          <FaArrowLeft className="text-lg sm:block hidden" />
-          Cart
-        </Heading>
-        <SelectionControl
-          type="checkbox"
-          label="Select All Items (2)"
-          styleLabel="!text-black !font-medium"
-        />
-      </div>
-          {children}
-         </div>
+          <div className="max-w-[700px] w-full flex gap-x-4">
+            <FaArrowLeft className="text-lg sm:block hidden mt-1" />
+            {children}
+          </div>
           <div className="max-w-[320px] space-y-8">
             <OrderSummary />
             <ProtectionCard />

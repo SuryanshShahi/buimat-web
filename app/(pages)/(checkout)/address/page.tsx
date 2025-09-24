@@ -1,13 +1,12 @@
 "use client";
+import Button from "@/app/shared/buttons/Button";
 import CardWrapper from "@/app/shared/cards/CardWrapper";
 import Chip from "@/app/shared/Chip";
 import Divider from "@/app/shared/divider";
 import Heading from "@/app/shared/heading";
 import Text from "@/app/shared/heading/Text";
 import InputField from "@/app/shared/input/InputField";
-import { FaArrowLeft } from "react-icons/fa6";
 import useHook from "./useHook";
-import Button from "@/app/shared/buttons/Button";
 
 const Page = () => {
   const { values, handleChange, setFieldValue } = useHook();
@@ -54,13 +53,12 @@ const Page = () => {
     },
   ];
   return (
-    <div className="space-y-4">
-      <div className="">
-        <Heading className="sm:text-lg flex gap-x-3 items-center" type="bold">
-          <FaArrowLeft className="text-lg sm:block hidden" />
+    <div className="space-y-4 w-full">
+      <div>
+        <Heading className="sm:text-lg" type="bold">
           Address
         </Heading>
-        <Text size="sm" variant="tertiary" className="lg:ml-7">
+        <Text size="sm" variant="tertiary">
           Your personal information is encrypted and will only be used for
           delivery purposes.
         </Text>

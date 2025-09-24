@@ -207,39 +207,41 @@ const ProductOverview = () => {
           {
             body: (
               <table className="bg-white w-full">
-                {[
-                  { label: "Use", value: "Interior Tiles" },
-                  {
-                    label: "Tile Type",
-                    value: "Floor Tiles, Wall Tiles",
-                  },
-                  { label: "Material", value: "Porcelain Tiles" },
-                  {
-                    label: "Application",
-                    value: "Hotel,villa,apartment",
-                  },
-                  { label: "Brand", value: "Cera" },
-                  { label: "Design Style", value: "Modern" },
-                  { label: "Design Pattern", value: "Abstract" },
-                  {
-                    label: "Function",
-                    value:
-                      "Antibacterial, Heat Insulation, Non-Slip, Wear-Resistant, Anti-slip",
-                  },
-                  { label: "Warranty", value: "2 years" },
-                  { label: "Luster", value: "GLOSSY" },
-                  { label: "Size", value: "600 X 600mm" },
-                  { label: "Water Absorption", value: "<0.5%" },
-                ].map((item, idx) => (
-                  <tr key={idx}>
-                    <td className="py-2 px-4 border border-secondary text-sm">
-                      {item.label}
-                    </td>
-                    <td className="py-2 px-4 border border-secondary text-sm">
-                      {item.value}
-                    </td>
-                  </tr>
-                ))}
+                <tbody>
+                  {[
+                    { label: "Use", value: "Interior Tiles" },
+                    {
+                      label: "Tile Type",
+                      value: "Floor Tiles, Wall Tiles",
+                    },
+                    { label: "Material", value: "Porcelain Tiles" },
+                    {
+                      label: "Application",
+                      value: "Hotel,villa,apartment",
+                    },
+                    { label: "Brand", value: "Cera" },
+                    { label: "Design Style", value: "Modern" },
+                    { label: "Design Pattern", value: "Abstract" },
+                    {
+                      label: "Function",
+                      value:
+                        "Antibacterial, Heat Insulation, Non-Slip, Wear-Resistant, Anti-slip",
+                    },
+                    { label: "Warranty", value: "2 years" },
+                    { label: "Luster", value: "GLOSSY" },
+                    { label: "Size", value: "600 X 600mm" },
+                    { label: "Water Absorption", value: "<0.5%" },
+                  ].map((item, idx) => (
+                    <tr key={idx}>
+                      <td className="py-2 px-4 border border-secondary text-sm">
+                        {item.label}
+                      </td>
+                      <td className="py-2 px-4 border border-secondary text-sm">
+                        {item.value}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
               </table>
             ),
             title: "Product Details",

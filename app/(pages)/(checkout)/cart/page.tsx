@@ -10,7 +10,6 @@ import SelectionControl from "@/app/shared/input/SelectionControl";
 import useWindowDimensions from "@/app/utils/hooks/useWindowDimension";
 import { Fragment } from "react";
 import { FaRegTrashAlt } from "react-icons/fa";
-import { FaArrowLeft } from "react-icons/fa6";
 import { RiHeartAdd2Line } from "react-icons/ri";
 
 const Page = () => {
@@ -18,8 +17,7 @@ const Page = () => {
   return (
     <div className="space-y-4">
       <div className="flex justify-between items-center">
-        <Heading className="sm:text-lg flex gap-x-3 items-center" type="bold">
-          <FaArrowLeft className="text-lg sm:block hidden" />
+        <Heading className="sm:text-lg" type="bold">
           Cart
         </Heading>
         <SelectionControl
