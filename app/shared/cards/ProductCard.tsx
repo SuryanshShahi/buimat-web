@@ -30,7 +30,6 @@ const ProductCard = ({
         "bg-white rounded-lg min-w-[245px] shadow-lg shadow-neutral-100 border border-gray-100 group cursor-pointer overflow-hidden",
         className
       )}
-      onClick={onClick}
     >
       <div className="overflow-hidden rounded-t-lg relative">
         <Img
@@ -44,7 +43,10 @@ const ProductCard = ({
             data.styleImage
           )}
         />
-        <div className="absolute inset-0 bg-black/15 h-full w-full flex items-end justify-end p-2">
+        <div
+          className="absolute inset-0 bg-black/15 h-full w-full flex items-end justify-end p-2"
+          onClick={onClick}
+        >
           <Button
             btnName="Ready to ship"
             icon={<SvgTruck fill="white" />}

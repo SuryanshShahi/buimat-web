@@ -1,22 +1,22 @@
+import Button from "@/app/shared/buttons/Button";
 import Heading from "@/app/shared/heading";
 import Text from "@/app/shared/heading/Text";
 import Img from "@/app/shared/Img";
-import { usePathname, useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
-import { PiDotsNineBold, PiShoppingCartFill } from "react-icons/pi";
-import SideBar from "../sideBar";
 import InputField from "@/app/shared/input/InputField";
-import { FaLocationDot, FaUser } from "react-icons/fa6";
-import Button from "@/app/shared/buttons/Button";
+import ListItem from "@/app/shared/ListItem";
 import PopOver from "@/app/shared/popover";
+import clsx from "clsx";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import { FaLocationDot, FaUser } from "react-icons/fa6";
+import { FiSearch } from "react-icons/fi";
 import {
   IoIosArrowForward,
   IoIosHeart,
   IoMdArrowDropdown,
 } from "react-icons/io";
-import clsx from "clsx";
-import { FiSearch } from "react-icons/fi";
-import ListItem from "@/app/shared/ListItem";
+import { PiDotsNineBold, PiShoppingCartFill } from "react-icons/pi";
+import SideBar from "../sideBar";
 
 const Navbar = () => {
   const router = useRouter();
@@ -35,7 +35,6 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", slideNav);
   }, []);
 
-  const pathname = usePathname();
   const [isActive, setIsActive] = useState("");
   const items = [
     "Wall Tiles",
@@ -191,7 +190,11 @@ const Navbar = () => {
           </div>
           <div className="flex items-center text-2xl sm:gap-x-10 gap-x-4 [&>*]:cursor-pointer">
             <IoIosHeart className="" size={20} />
-            <PiShoppingCartFill className="" size={20} />
+            <PiShoppingCartFill
+              className=""
+              size={20}
+              onClick={() => router.push("/cart")}
+            />
             <FaUser className="" size={18} />
           </div>
         </div>

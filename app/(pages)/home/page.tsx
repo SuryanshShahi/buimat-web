@@ -146,7 +146,7 @@ const Page = () => {
               <HeadingWithBtn
                 className="gap-x-4 sm:!items-center !items-start"
                 btnText="View All"
-                path={`/product-details?id=${item.title}`}
+                path={`/${item.title}`}
                 styleBtn="flex items-center !text-black sm:!text-base !text-xs text-nowrap sm:mt-0 mt-1"
                 btnIcon={
                   <IoIosArrowForward className="text-tertiary sm:text-base text-sm" />
@@ -159,7 +159,11 @@ const Page = () => {
             </div>
             <div className="flex gap-x-3 gap-y-6 overflow-x-scroll">
               {item.items.map((e, idx) => (
-                <ProductCard data={e} key={idx} />
+                <ProductCard
+                  data={e}
+                  key={idx}
+                  onClick={() => router.push("/product-details?id=asd")}
+                />
               ))}
             </div>
           </div>
