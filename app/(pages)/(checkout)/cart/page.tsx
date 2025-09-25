@@ -2,6 +2,7 @@
 import Button from "@/app/shared/buttons/Button";
 import CounterBtn from "@/app/shared/buttons/CounterBtn";
 import CardWrapper from "@/app/shared/cards/CardWrapper";
+import ProductCardHorizontal from "@/app/shared/cards/ProductCardHorizontal";
 import Divider from "@/app/shared/divider";
 import Heading from "@/app/shared/heading";
 import Text from "@/app/shared/heading/Text";
@@ -31,25 +32,14 @@ const Page = () => {
           .fill(null)
           .map((_, idx) => (
             <CardWrapper className="space-y-6 !p-5" key={idx}>
-              <div className="flex gap-x-4">
-                <Img
-                  src="/images/hero1.webp"
-                  alt=""
-                  height={90}
-                  width={90}
-                  isLocal
-                  className="sm:h-[90px] sm:min-w-[90px] rounded-lg"
-                />
-                <div className="space-y-1">
-                  <Text size="sm" className="line-clamp-2">
-                    600X600mm Porcelanto Glossy Glazed Ceramic Tile For Floor
-                    Standard White Marble Porcelain Tiles
-                  </Text>
-                  <Text size="sm" variant="tertiary">
-                    Min. Order - 100 sq. feet
-                  </Text>
-                </div>
-              </div>
+              <ProductCardHorizontal
+                data={{
+                  title:
+                    "600X600mm Porcelanto Glossy Glazed Ceramic Tile For Floor Standard White Marble Porcelain Tiles",
+                  subtitle: "Min. Order - 100 sq. feet",
+                  image: "/images/hero1.webp",
+                }}
+              />
               <div className="sm:space-y-4 space-y-6">
                 {Array(2)
                   .fill(null)

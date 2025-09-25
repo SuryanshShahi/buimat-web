@@ -78,7 +78,7 @@ const Page = () => {
               {item}
             </Text>
           ))}
-          <Text size="sm" variant="black" type="bold">
+          <Text size="sm" variant="black" type="semibold">
             Mobile: 9620379947
           </Text>
         </div>
